@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#D0DD97"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/sinsun_logo" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="662dp">
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="TextViewASDFsdfsadfsadfasfsafsafasfasfsafasdfasdfasdfasdfasdfsadfasfasdfasfdasdfasd
+                            fafasfsadfasdfas
+                            fasfdsafasdf
+                            asdfsafasdf\nsadfasdfsdf\nasdfasdf\nsdfsdf\nasdfasdfsa\nsdfasfsad\nasffas\nsasdfa
+                            \nasdfga\nasdf\nasfd\nasdfg\nadfg\nafg\nasdfgan\nsadfsgasfgaasdf
+                            \n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/advertise_banner"
+                android:layout_width="1000dp"
+                android:layout_height="100dp"
+                android:layout_gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/advertise1"
+                    app:srcCompat="@drawable/advertise1" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/advertise2"
+                    app:srcCompat="@drawable/advertise2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/surplus_banner"
+                android:layout_width="1000dp"
+                android:layout_height="100dp"
+                android:layout_gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/surplus1"
+                    app:srcCompat="@drawable/surplus1" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/surplus2"
+                    app:srcCompat="@drawable/surplus2" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Button1"
+                android:layout_width="325dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:text="반찬가게1" />
+
+            <Button
+                android:id="@+id/Button2"
+                android:layout_width="325dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:text="반찬가게2" />
+
+            <Button
+                android:id="@+id/Button3"
+                android:layout_width="325dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:text="반찬가게3" />
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@drawable/ic_launcher_background"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
