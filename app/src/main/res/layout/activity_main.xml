@@ -111,6 +111,7 @@
                 android:id="@+id/Button1"
                 android:layout_width="325dp"
                 android:layout_height="200dp"
+                android:onClick="sendMessage1"
                 android:orientation="vertical"
                 android:text="반찬가게1" />
 
@@ -118,6 +119,7 @@
                 android:id="@+id/Button2"
                 android:layout_width="325dp"
                 android:layout_height="200dp"
+                android:onClick="sendMessage2"
                 android:orientation="vertical"
                 android:text="반찬가게2" />
 
@@ -125,6 +127,7 @@
                 android:id="@+id/Button3"
                 android:layout_width="325dp"
                 android:layout_height="200dp"
+                android:onClick="sendMessage3"
                 android:orientation="vertical"
                 android:text="반찬가게3" />
 
