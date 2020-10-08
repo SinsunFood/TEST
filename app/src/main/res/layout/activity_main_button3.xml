@@ -17,4 +17,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/sinsun_header_logo" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="반찬가게1"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="333dp" />
 </android.support.constraint.ConstraintLayout>
