@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="#D0DD97"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
 
 
         <ImageView
@@ -54,45 +55,8 @@
                             \nasdfga\nasdf\nasfd\nasdfg\nadfg\nafg\nasdfgan\nsadfsgasfgaasdf
                             \n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)" />
             </FrameLayout>
-            <FrameLayout
-                android:id="@+id/frame"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </FrameLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                >
-                <Button
-                    android:id="@+id/btn_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="홈"
-                    />
-                <Button
-                    android:id="@+id/btn_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="장바구니"
-                    />
-                <Button
-                    android:id="@+id/btn_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="알림"
-                    />
-                <Button
-                    android:id="@+id/btn_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="내정보"
-                    />
-            </LinearLayout>
+
+
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/view"
@@ -136,4 +100,39 @@
                 android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
+
+        >
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="홈"
+            />
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="장바구니"
+            />
+        <Button
+            android:id="@+id/btn_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="알림"
+            />
+        <Button
+            android:id="@+id/btn_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="내정보"
+            />
+    </LinearLayout>
 </LinearLayout>

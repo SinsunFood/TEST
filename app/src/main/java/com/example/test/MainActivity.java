@@ -41,7 +41,7 @@ btn1.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
         Fragment1 fragment1 = new Fragment1();
-        tr.replace(R.id.frame,fragment1);
+        tr.replace(R.id.btn_1,fragment1);
 
         tr.commit();
 
@@ -53,7 +53,7 @@ btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
                 Fragment2 fragment2 = new Fragment2();
-                tr.replace(R.id.frame,fragment2);
+                tr.replace(R.id.btn_2,fragment2);
 
                 tr.commit();
 
@@ -65,7 +65,7 @@ btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
                 Fragment3 fragment3= new Fragment3();
-                tr.replace(R.id.frame,fragment3);
+                tr.replace(R.id.btn_3,fragment3);
 
                 tr.commit();
 
@@ -77,7 +77,7 @@ btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
                 Fragment4 fragment4 = new Fragment4();
-                tr.replace(R.id.frame,fragment4);
+                tr.replace(R.id.btn_4,fragment4);
 
                 tr.commit();
 
