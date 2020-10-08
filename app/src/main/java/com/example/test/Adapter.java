@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Adapter extends PagerAdapter {
-    private int[] images = {R.drawable.test_advertise1,R.drawable.test_advertise2,R.drawable.test_advertise3};
+    private int[] images = {R.drawable.sinsun_header_logo,R.drawable.sinsun_header_logo,R.drawable.sinsun_header_logo};
     private LayoutInflater inflater;
     private Context context;
 
