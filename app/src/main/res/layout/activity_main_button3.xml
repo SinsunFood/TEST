@@ -9,9 +9,9 @@
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="411dp"
-        android:layout_height="95dp"
-        android:layout_marginBottom="650dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="238dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +22,10 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="반찬가게1"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="333dp" />
+        android:layout_marginBottom="350dp"
+        android:text="반찬가게3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 </android.support.constraint.ConstraintLayout>
