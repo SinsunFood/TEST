@@ -10,9 +10,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginTop="50dp"
         android:background="#D0DD97"
-        android:orientation="horizontal"
-        android:layout_marginTop="50dp">
+        android:orientation="horizontal">
 
 
         <ImageView
@@ -22,11 +22,6 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/header_logo" />
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="430dp"
-            android:layout_height="81dp"
-            app:srcCompat="@drawable/header_logo" />
     </LinearLayout>
 
     <ScrollView
@@ -60,6 +55,7 @@
                             asdfsafasdf\nsadfasdfsdf\nasdfasdf\nsdfsdf\nasdfasdfsa\nsdfasfsad\nasffas\nsasdfa
                             \nasdfga\nasdf\nasfd\nasdfg\nadfg\nafg\nasdfgan\nsadfsgasfgaasdf
                             \n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)" />
+
             </FrameLayout>
 
 
@@ -74,6 +70,7 @@
                 android:id="@+id/Button1"
                 android:layout_width="325dp"
                 android:layout_height="200dp"
+                android:onClick="toMarket1"
                 android:orientation="vertical"
                 android:text="반찬가게1" />
 
@@ -81,6 +78,7 @@
                 android:id="@+id/Button2"
                 android:layout_width="325dp"
                 android:layout_height="200dp"
+                android:onClick="toMarket2"
                 android:orientation="vertical"
                 android:text="반찬가게2" />
 
@@ -88,6 +86,7 @@
                 android:id="@+id/Button3"
                 android:layout_width="325dp"
                 android:layout_height="200dp"
+                android:onClick="toMarket3"
                 android:orientation="vertical"
                 android:text="반찬가게3" />
 
@@ -118,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="sendMessage"
+            android:onClick="toHome"
             android:text="홈" />
         <Button
             android:id="@+id/btn_2"

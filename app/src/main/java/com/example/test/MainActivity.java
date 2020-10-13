@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn1,btn2,btn3,btn4;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +35,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
-    public void sendMessage(View view) {
-        Intent intent = new Intent(getApplicationContext(), Fragment1.class);
+
+    public void toMarket1(View view){ // 반찬가게 1로 바꿈
+        Intent intent = new Intent(getApplicationContext(), Market1.class);
+        startActivity(intent);
+    }
+
+    public void toMarket2(View view){ // 반찬가게 2로
+        Intent intent = new Intent(getApplicationContext(), Market2.class);
+        startActivity(intent);
+    }
+
+    public void toMarket3(View view){ // 반찬가게 3으로
+        Intent intent = new Intent(getApplicationContext(), Market3.class);
+        startActivity(intent);
+    }
+
+    public void toHome(View view){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 }
