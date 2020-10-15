@@ -13,12 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity {
 
     Adapter adapter;
     ViewPager viewPager;
-
+    ScrollView mScrollview;
 
     Button btn1,btn2,btn3,btn4;
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.view);
         adapter = new Adapter(this);
         viewPager.setAdapter(adapter);
-
+        mScrollview = findViewById(R.id.scrollView);
 
 
 
@@ -54,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toHome(View view){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        //startActivity(intent);
+        // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
+        mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
 }
