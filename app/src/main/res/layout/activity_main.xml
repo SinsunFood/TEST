@@ -123,11 +123,9 @@
             android:layout_weight="1"
             android:background="@android:color/background_light"
             android:drawableTop="@drawable/botton_main_home"
-            android:onClick="sendMessage"
+            android:onClick="toHome"
             android:text="홈"
             />
-            android:onClick="toHome"
-            android:text="홈" />
         <Button
             android:id="@+id/btn_2"
             android:layout_width="wrap_content"
