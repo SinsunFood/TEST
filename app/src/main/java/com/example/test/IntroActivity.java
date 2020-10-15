@@ -14,7 +14,7 @@ public class IntroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
 
         Handler x = new Handler();
-        x.postDelayed(new SplashHandler(),5000);
+        x.postDelayed(new SplashHandler(),1000);
 
     }
     public class SplashHandler implements Runnable{
