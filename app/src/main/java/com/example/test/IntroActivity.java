@@ -19,7 +19,7 @@ public class IntroActivity extends AppCompatActivity {
     }
     public class SplashHandler implements Runnable{
         public void run(){
-            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
         }
