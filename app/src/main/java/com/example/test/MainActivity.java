@@ -1,74 +1,63 @@
 package com.example.test;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.view.LayoutInflaterCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity {
 
+    Adapter adapter;
+    ViewPager viewPager;
+    ScrollView mScrollview;
 
     Button btn1,btn2,btn3,btn4;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn1 =(Button)findViewById(R.id.btn_1);
-        btn2 =(Button)findViewById(R.id.btn_2);
-        btn3 =(Button)findViewById(R.id.btn_3);
-        btn4 =(Button)findViewById(R.id.btn_4);
+        viewPager = (ViewPager) findViewById(R.id.view);
+        adapter = new Adapter(this);
+        viewPager.setAdapter(adapter);
+        mScrollview = findViewById(R.id.scrollView);
 
-btn1.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
-        Fragment1 fragment1 = new Fragment1();
-        tr.replace(R.id.frame,fragment1);
 
-        tr.commit();
+
+
 
     }
-});
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
-                Fragment2 fragment2 = new Fragment2();
-                tr.replace(R.id.frame,fragment2);
+    public void toMarket1(View view){ // 반찬가게 1로 바꿈
+        Intent intent = new Intent(getApplicationContext(), Market1.class);
+        startActivity(intent);
+    }
 
-                tr.commit();
+    public void toMarket2(View view){ // 반찬가게 2로
+        Intent intent = new Intent(getApplicationContext(), Market2.class);
+        startActivity(intent);
+    }
 
-            }
-        });
+    public void toMarket3(View view){ // 반찬가게 3으로
+        Intent intent = new Intent(getApplicationContext(), Market3.class);
+        startActivity(intent);
+    }
 
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
-                Fragment3 fragment3= new Fragment3();
-                tr.replace(R.id.frame,fragment3);
-
-                tr.commit();
-
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction tr = getSupportFragmentManager().beginTransaction();
-                Fragment4 fragment4 = new Fragment4();
-                tr.replace(R.id.frame,fragment4);
-
-                tr.commit();
-
-            }
-        });
+    public void toHome(View view){
+        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        //startActivity(intent);
+        // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
+        mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
 }
