@@ -35,29 +35,36 @@
             android:orientation="vertical">
 
             <android.support.design.widget.TabLayout
+                android:id="@+id/tab"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="50dp"
+
+                app:tabIndicatorColor="@android:color/black"
+                app:tabSelectedTextColor="@color/cardview_dark_background">
 
                 <android.support.design.widget.TabItem
+                    android:id="@+id/tab_1"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:text="메뉴" />
 
                 <android.support.design.widget.TabItem
+                    android:id="@+id/tab_2"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:text="할인" />
+                    android:text="리뷰" />
 
                 <android.support.design.widget.TabItem
+                    android:id="@+id/tab_3"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:text="추천메뉴" />
+                    android:text="매장정보" />
             </android.support.design.widget.TabLayout>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewpager"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+                android:layout_height="400dp"></android.support.v4.view.ViewPager>
         </LinearLayout>
     </ScrollView>
 
