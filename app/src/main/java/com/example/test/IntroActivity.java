@@ -1,6 +1,6 @@
 package com.example.test;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.os.Handler;
@@ -19,7 +19,7 @@ public class IntroActivity extends AppCompatActivity {
     }
     public class SplashHandler implements Runnable{
         public void run(){
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
             startActivity(intent);
             finish();
         }
