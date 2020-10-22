@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,9 @@ public class Market1 extends AppCompatActivity {
         ViewPager vp = findViewById(R.id.viewpager);
         VPAdapter adapter = new VPAdapter(getSupportFragmentManager());
         vp.setAdapter(adapter);
+
+        TabLayout tab = findViewById(R.id.tab);
+        tab.setupWithViewPager(vp);
     }
 
     public void toHome(View view){
