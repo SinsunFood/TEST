@@ -5,6 +5,11 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 
 
@@ -27,6 +32,8 @@ public class Market1 extends AppCompatActivity{
         adapter.items.add(new FragmentMenu2());
         adapter.items.add(new FragmentMenu3());
         vp.setAdapter(adapter);
+
+        ImageButton btn = (ImageButton) findViewById(R.id.imageView);
 
     }
 
