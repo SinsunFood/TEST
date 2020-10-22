@@ -44,66 +44,18 @@
 
                 <ImageButton
                     android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="144dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/sinsun_logo"
                     android:layout_gravity="top|left"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|center_horizontal"
-                    tools:src="@tools:sample/avatars" />
+                    />
 
                 <ImageButton
                     android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|right"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|left"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|left"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    tools:src="@tools:sample/avatars" />
+                    android:layout_width="126dp"
+                    android:layout_height="131dp"
+                    android:src="@drawable/mapfreeview"
+                    android:layout_gravity="top|center_horizontal"/>
             </FrameLayout>
 
             <!--FrameLayout!-->
