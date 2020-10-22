@@ -1,8 +1,8 @@
 package com.example.test;
 
 import android.content.Intent;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -33,7 +33,6 @@ public class Market1 extends AppCompatActivity{
         adapter.items.add(new FragmentMenu3());
         vp.setAdapter(adapter);
 
-        ImageButton btn = (ImageButton) findViewById(R.id.imageView);
 
     }
 
