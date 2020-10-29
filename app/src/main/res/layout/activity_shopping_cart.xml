@@ -26,7 +26,7 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="603dp"
+        android:layout_height="549dp"
         android:layout_marginTop="0dp"
         android:fillViewport="true"
         android:gravity="center"
@@ -43,7 +43,9 @@
                 android:id="@+id/cart_store_name"
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
-                android:text="몽실이네" />
+                android:padding="8dp"
+                android:text="몽실이네"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -74,15 +76,19 @@
                     android:layout_height="50dp"
                     android:layout_weight="5"
                     android:gravity="left"
-                    android:text="menuname" />
+                    android:padding="7dp"
+                    android:text="menuname"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <TextView
                     android:id="@+id/text_itemPrice_cart1"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="6000원" />
+                    android:gravity="left"
+                    android:paddingRight="3dp"
+                    android:text="6000원"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <Button
                     android:id="@+id/botton_minus_cart1"
@@ -90,7 +96,8 @@
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="-" />
+                    android:text="-"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <TextView
                     android:id="@+id/text_itemCount_cart1"
@@ -108,7 +115,8 @@
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="+" />
+                    android:text="+"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </LinearLayout>
 
         </LinearLayout>
