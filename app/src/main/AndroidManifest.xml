@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Market3"></activity>
-        <activity android:name=".Market2"></activity>
+        <activity android:name=".cart_example"></activity>
+        <activity android:name=".Market3" />
+        <activity android:name=".Market2" />
         <activity android:name=".Market1" />
         <activity android:name=".Fragment1" />
         <activity android:name=".IntroActivity">
