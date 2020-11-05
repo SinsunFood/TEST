@@ -18,7 +18,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/header_logo" />
+
     </LinearLayout>
+
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -34,12 +36,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.v4.view.ViewPager
+            <androidx.viewpager.widget.ViewPager
                 android:id="@+id/mapview"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp" />
 
-            <android.support.design.widget.TabLayout
+            <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -47,28 +49,29 @@
                 app:tabIndicatorColor="@android:color/black"
                 app:tabSelectedTextColor="@color/cardview_dark_background">
 
-                <android.support.design.widget.TabItem
+                <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:text="메뉴" />
 
-                <android.support.design.widget.TabItem
+                <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:text="리뷰" />
 
-                <android.support.design.widget.TabItem
+                <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:text="매장정보" />
-            </android.support.design.widget.TabLayout>
+            </com.google.android.material.tabs.TabLayout>
 
-            <android.support.v4.view.ViewPager
+
+            <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="362dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
-            </android.support.v4.view.ViewPager>
+            </androidx.viewpager.widget.ViewPager>
         </LinearLayout>
     </ScrollView>
 
@@ -108,8 +111,3 @@
     </LinearLayout>
 
 </LinearLayout>
-
-
-
-
-

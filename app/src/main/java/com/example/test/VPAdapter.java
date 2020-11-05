@@ -1,26 +1,21 @@
 package com.example.test;
 
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
 public class VPAdapter extends FragmentPagerAdapter {
-    private ArrayList<Fragment> items;
-    private ArrayList<String> itext = new ArrayList<String>();
-
+    public ArrayList<Fragment> items;
+    public ArrayList<String> itext;
     public VPAdapter(FragmentManager fm) {
         super(fm);
         items = new ArrayList<Fragment>();
-        items.add(new FragmentMenu1());
-        items.add(new FragmentMenu2());
-        items.add(new FragmentMenu3());
+        itext = new ArrayList<String>();
 
-        itext.add("메뉴");
-        itext.add("리뷰");
-        itext.add("매장정보");
+
     }
 
     @Nullable

@@ -1,9 +1,9 @@
 package com.example.test;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Market3 extends AppCompatActivity {
 
