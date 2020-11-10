@@ -14,8 +14,6 @@ public class VPAdapter extends FragmentPagerAdapter {
         super(fm);
         items = new ArrayList<Fragment>();
         itext = new ArrayList<String>();
-
-
     }
 
     @Nullable
