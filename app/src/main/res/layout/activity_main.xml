@@ -20,6 +20,11 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/header_logo" />
 
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="430dp"
+            android:layout_height="81dp"
+            app:srcCompat="@drawable/header_logo" />
     </LinearLayout>
 
     <ScrollView
@@ -116,7 +121,7 @@
             android:text="홈"
             />
         <Button
-            android:id="@+id/btn_2"
+            android:id="@+id/btn_go_to_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
