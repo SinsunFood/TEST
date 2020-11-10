@@ -58,6 +58,17 @@ public class FragmentMenu1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu1, container, false);
+
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_menu1,container,false);
+
+        final View thumb1View = rootView.findViewById(R.id.thumb_button_1);
+        thumb1View.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ZoomImage zoomImage = new ZoomImage();
+                zoomImage.zoomImageFromThumb(thumb1View, R.drawable.img1);
+            }
+        });
+        return rootView;
     }
 }

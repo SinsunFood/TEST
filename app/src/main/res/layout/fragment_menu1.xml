@@ -44,17 +44,32 @@
 
                 <ImageButton
                     android:id="@+id/imageButton"
-                    android:layout_width="142dp"
+                    android:layout_width="144dp"
                     android:layout_height="128dp"
+                    android:src="@drawable/sinsun_logo"
                     android:layout_gravity="top|left"
-                    android:src="@drawable/sinsun_logo" />
+                    />
+                <ImageButton
+                    android:id="@+id/thumb_button_1"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:layout_marginRight="1dp"
+                    android:src="@drawable/img1"
 
+                    android:layout_gravity="top|center_horizontal"
+                    android:contentDescription="description_image_1" />
                 <ImageButton
                     android:id="@+id/imageButton2"
                     android:layout_width="126dp"
                     android:layout_height="131dp"
                     android:src="@drawable/mapfreeview"
-                    android:layout_gravity="top|center_horizontal"/>
+                    android:layout_gravity="top|right"/>
+                <ImageView
+                    android:id="@+id/expanded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible"
+                    android:contentDescription="description_zoom_touch_close" />
             </FrameLayout>
 
             <!--FrameLayout!-->
