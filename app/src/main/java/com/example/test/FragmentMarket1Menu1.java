@@ -1,18 +1,20 @@
 package com.example.test;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentMenu1#newInstance} factory method to
+ * Use the {@link FragmentMarket1Menu1#newInstance} factory method to
  * create an instance of this fragment.
  *
  */
-public class FragmentMenu1 extends Fragment {
+public class FragmentMarket1Menu1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,8 +34,8 @@ public class FragmentMenu1 extends Fragment {
      * @return A new instance of fragment FragmentMenu1.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentMenu1 newInstance(String param1, String param2) {
-        FragmentMenu1 fragment = new FragmentMenu1();
+    public static FragmentMarket1Menu1 newInstance(String param1, String param2) {
+        FragmentMarket1Menu1 fragment = new FragmentMarket1Menu1();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -41,7 +43,7 @@ public class FragmentMenu1 extends Fragment {
         return fragment;
     }
 
-    public FragmentMenu1() {
+    public FragmentMarket1Menu1() {
         // Required empty public constructor
     }
 
@@ -58,6 +60,6 @@ public class FragmentMenu1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu1, container, false);
+        return inflater.inflate(R.layout.fragment_market1_menu1, container, false);
     }
 }
