@@ -44,11 +44,10 @@
 
                 <ImageButton
                     android:id="@+id/imageButton"
-                    android:layout_width="144dp"
+                    android:layout_width="142dp"
                     android:layout_height="128dp"
-                    android:src="@drawable/sinsun_logo"
                     android:layout_gravity="top|left"
-                    />
+                    android:src="@drawable/sinsun_logo" />
 
                 <ImageButton
                     android:id="@+id/imageButton2"
@@ -62,7 +61,20 @@
 
 
         </LinearLayout>
+        <!-- This initially-hidden ImageView will hold the expanded/zoomed version of
+            the images above. Without transformations applied, it takes up the entire
+            screen. To achieve the "zoom" animation, this view's bounds are animated
+            from the bounds of the thumbnail button above, to its final laid-out
+            bounds.
+            -->
+        <ImageView
+            android:id="@+id/expanded_image_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:contentDescription="description_zoom_touch_close">
 
+        </ImageView>
     </ScrollView>
 
     </LinearLayout>
