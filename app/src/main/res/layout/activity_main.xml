@@ -133,6 +133,7 @@
             android:drawableTop="@drawable/botton_main_shopping_cart"
             android:text="장바구니"
             />
+
         <Button
             android:id="@+id/btn_3"
             android:layout_width="wrap_content"
@@ -140,8 +141,8 @@
             android:layout_weight="1"
             android:background="@android:color/background_light"
             android:drawableTop="@drawable/botton_main_notifications"
-            android:text="알림"
-            />
+            android:onClick="toAlr"
+            android:text="알림" />
         <Button
             android:id="@+id/btn_4"
             android:layout_width="wrap_content"
