@@ -77,37 +77,47 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="48dp">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        >
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:drawableTop="@drawable/botton_main_home"
             android:onClick="toHome"
-            android:text="홈" />
-
+            android:text="홈"
+            />
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="장바구니" />
-
+            android:background="@android:color/background_light"
+            android:drawableTop="@drawable/botton_main_shopping_cart"
+            android:text="장바구니"
+            />
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="알림" />
-
+            android:background="@android:color/background_light"
+            android:drawableTop="@drawable/botton_main_notifications"
+            android:text="알림"
+            />
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btn_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="내정보" />
+            android:background="@android:color/background_light"
+            android:drawableTop="@drawable/botton_main_myinfo"
+            android:text="내정보"
+            />
     </LinearLayout>
 
 </LinearLayout>

@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toCart(View view){ // 홈화면에서 장바구니로 이동
-        Intent intent = new Intent(getApplicationContext(), Shopping_cart.class);
+        Intent intent = new Intent(this, Shopping_cart.class);
         startActivity(intent);
     }
 
