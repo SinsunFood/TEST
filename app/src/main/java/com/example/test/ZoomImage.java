@@ -4,12 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Fragment;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
+
+import androidx.fragment.app.Fragment;
 
 
 public class ZoomImage extends Fragment {
