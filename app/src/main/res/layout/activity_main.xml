@@ -127,6 +127,7 @@
             android:layout_weight="1"
             android:background="@android:color/background_light"
             android:drawableTop="@drawable/botton_main_shopping_cart"
+            android:onClick="toCart"
             android:text="장바구니"
             />
         <Button

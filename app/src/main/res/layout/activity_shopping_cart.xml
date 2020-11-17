@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
     <LinearLayout
@@ -98,7 +99,7 @@
             android:layout_weight="1"
             android:background="@android:color/background_light"
             android:drawableTop="@drawable/botton_main_home"
-            android:onClick="toHome"
+            android:onClick="cart_toHome"
             android:text="홈"
             />
         <Button

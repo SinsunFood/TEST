@@ -1,15 +1,7 @@
 package com.example.test;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -35,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
         mScrollview = findViewById(R.id.scrollView);
 
 
-
-
-
     }
 
     public void toMarket1(View view){ // 반찬가게 1로 바꿈
@@ -55,10 +44,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void toHome(View view){
-        // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
+    public void toHome(View view){ // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
         mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
 
+    public void toCart(View view){ // 홈화면에서 장바구니로 이동
+        Intent intent = new Intent(getApplicationContext(), Shopping_cart.class);
+        startActivity(intent);
+    }
 
 }
