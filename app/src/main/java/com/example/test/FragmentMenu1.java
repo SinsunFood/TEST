@@ -1,10 +1,18 @@
 package com.example.test;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,17 +66,9 @@ public class FragmentMenu1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_menu1,container,false);
-
-        final View thumb1View = rootView.findViewById(R.id.thumb_button_1);
-        thumb1View.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ZoomImage zoomImage = new ZoomImage();
-                zoomImage.zoomImageFromThumb(thumb1View, R.drawable.img1);
-            }
-        });
-        return rootView;
+        return inflater.inflate(R.layout.fragment_menu2, container, false);
     }
+/*
+    public get*/
+
 }

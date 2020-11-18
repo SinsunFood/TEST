@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class Adapter extends PagerAdapter {
-    private int[] images = {R.drawable.header_logo,R.drawable.header_logo,R.drawable.header_logo};
+    private int[] images = {R.drawable.surplus1,R.drawable.surplus1,R.drawable.surplus1};
     private LayoutInflater inflater;
     private Context context;
 

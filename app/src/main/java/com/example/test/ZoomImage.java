@@ -14,13 +14,13 @@ import androidx.fragment.app.Fragment;
 
 
 public class ZoomImage extends Fragment {
-    private Animator currentAnimator;
-    private int shortAnimationDuration;
+    public Animator currentAnimator;
+    public int shortAnimationDuration;
 
     public ZoomImage(){
 
     }
-    public void zoomImageFromThumb(final View thumbView, int imageResId) {
+    public void zoomImageFromThumb(final View thumbView, final ImageView expandedImageView, int imageResId) {
         // If there's an animation in progress, cancel it
         // immediately and proceed with this one.
         if (currentAnimator != null) {
@@ -28,8 +28,8 @@ public class ZoomImage extends Fragment {
         }
 
         // Load the high-resolution "zoomed-in" image.
-        final ImageView expandedImageView = (ImageView) getView().findViewById(
-                R.id.expanded_image);
+       /* final ImageView expandedImageView = (ImageView) getView().findViewById(
+                R.id.expanded_image);*/
         expandedImageView.setImageResource(imageResId);
 
         // Calculate the starting and ending bounds for the zoomed-in image.
