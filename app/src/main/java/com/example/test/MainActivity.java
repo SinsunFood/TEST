@@ -50,13 +50,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void toHome(View view){
-        // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
+    public void toHome(View view){ // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
         mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
 
     public void toAlr(View view){ //toAlram이라 할랬으나 Alarm이 이미 있는 변수나 함수인거같음
         Intent intent = new Intent(getApplicationContext(), AlramPage.class);
+        startActivity(intent);
+    }
+
+
+    public void toCart(View view){ // 홈화면에서 장바구니로 이동
+        Intent intent = new Intent(this, Shopping_cart.class);
         startActivity(intent);
     }
 
