@@ -60,4 +60,8 @@ public class MainActivity extends AppCompatActivity {
         // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
         mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
+    public void toLogin(View view){
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        startActivity(intent);
+    }
 }

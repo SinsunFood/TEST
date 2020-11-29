@@ -146,6 +146,7 @@
             android:drawableTop="@drawable/botton_main_notifications"
             android:text="알림"
             />
+
         <Button
             android:id="@+id/btn_4"
             android:layout_width="wrap_content"
@@ -153,7 +154,7 @@
             android:layout_weight="1"
             android:background="@android:color/background_light"
             android:drawableTop="@drawable/botton_main_myinfo"
-            android:text="내정보"
-            />
+            android:onClick="toLogin"
+            android:text="내정보" />
     </LinearLayout>
 </LinearLayout>
