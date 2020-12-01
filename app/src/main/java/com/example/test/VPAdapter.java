@@ -1,9 +1,9 @@
 package com.example.test;
 
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,6 @@ public class VPAdapter extends FragmentPagerAdapter {
         itext.add("매장정보");
     }
 
-    @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
         return itext.get(position);

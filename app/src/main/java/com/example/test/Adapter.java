@@ -1,14 +1,17 @@
 package com.example.test;
 
-import android.support.v4.view.PagerAdapter;
+
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.viewpager.widget.PagerAdapter;
+
 
 public class Adapter extends PagerAdapter {
     private int[] images = {R.drawable.header_logo,R.drawable.header_logo,R.drawable.header_logo};
