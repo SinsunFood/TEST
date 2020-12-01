@@ -1,7 +1,9 @@
 package com.example.test;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class Fragment4 extends AppCompatActivity {
 

@@ -1,12 +1,15 @@
 package com.example.test;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -49,9 +52,11 @@ public class RegisterLogin extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
+
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success){//회원등록에 성공한 경우
+
                                 Toast.makeText(getApplicationContext(),"신선 회원가입을 축하드립니다.",Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(RegisterLogin.this,Login.class);
                                 startActivity(intent);

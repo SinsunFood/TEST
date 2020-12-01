@@ -60,15 +60,15 @@
                             \nasdfga\nasdf\nasfd\nasdfg\nadfg\nafg\nasdfgan\nsadfsgasfgaasdf
                             \n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)" />
 
+
             </FrameLayout>
 
 
 
-            <android.support.v4.view.ViewPager
+            <androidx.viewpager.widget.ViewPager
                 android:id="@+id/view"
                 android:layout_width="wrap_content"
-                android:layout_height="110dp"></android.support.v4.view.ViewPager>
-
+                android:layout_height="110dp"></androidx.viewpager.widget.ViewPager>
 
             <Button
                 android:id="@+id/Button1"

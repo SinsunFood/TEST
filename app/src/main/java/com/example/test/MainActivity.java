@@ -1,19 +1,15 @@
 package com.example.test;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+
+
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
