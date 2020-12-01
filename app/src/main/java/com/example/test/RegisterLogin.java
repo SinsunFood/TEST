@@ -27,14 +27,14 @@ public class RegisterLogin extends AppCompatActivity {
         setContentView(R.layout.activity_register_login);
 
 
-//아이디값찾아주기
+//아이디값찾아주기@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     et_id = findViewById(R.id.et_id);
     et_pass = findViewById(R.id.et_pass);
     et_name = findViewById(R.id.et_name);
     et_age = findViewById(R.id.et_age);
 
 
-       //회원가입 버튼 클릭시 수행
+       //회원가입 버튼 클릭시 수행@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         btn_register = findViewById(R.id.btn_register);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
