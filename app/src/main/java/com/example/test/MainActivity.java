@@ -62,4 +62,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
     }
+
+    public void toCart(View view){
+        Intent intent = new Intent(getApplicationContext(), recyclerActivity.class);
+        startActivity(intent);
+    }
 }
