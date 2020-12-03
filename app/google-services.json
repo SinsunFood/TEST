@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "572024227263",
+    "project_id": "sinsun",
+    "storage_bucket": "sinsun.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572024227263:android:4b30ba1349f0aa6b268d0a",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572024227263-5p0i1d9p0q48qblhri1lag10cgt0bmfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5XsJ4aVs1E3sUx1Qffsrj0WB5T9uj6FE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572024227263-5p0i1d9p0q48qblhri1lag10cgt0bmfr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
