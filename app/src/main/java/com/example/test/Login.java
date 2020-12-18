@@ -17,66 +17,119 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+
+import com.bumptech.glide.Glide;
+import com.kakao.sdk.auth.LoginClient;
+import com.kakao.sdk.auth.model.OAuthToken;
+import com.kakao.sdk.user.UserApiClient;
+import com.kakao.sdk.user.model.User;
+
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
+
+
 public class Login extends AppCompatActivity {
     private EditText et_id,et_pass;
     private Button btn_login,btn_register;
-
+    private static final String TAG = "Login";
+    private  View loginButton,logoutButton;
+    private  TextView nickName;
+    private  ImageView profileImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        loginButton = findViewById(R.id.login);
+        logoutButton = findViewById(R.id.logout);
+        nickName = findViewById(R.id.nickname);
+        profileImage = findViewById(R.id.profile);
 
-        et_id = findViewById(R.id.et_id);
-        et_pass = findViewById(R.id.et_pass);
-        btn_login = findViewById(R.id.btn_login);
-        btn_register = findViewById(R.id.btn_register);
 
-//회원가입 버튼을 클릭시 수행
-        btn_register.setOnClickListener(new View.OnClickListener() {
+        Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this,RegisterLogin.class);
-                startActivity(intent);
+            public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
+                if (oAuthToken != null) {
+                    // TBD
+                }
+                if (throwable != null) {
+                    // TBD
+                    Log.w(TAG, "invoke: " + throwable.getLocalizedMessage());
+                }
+               Login.this.updateKakaoLoginUi();
+                return null;
+            }
+        };
+
+        loginButton.setOnClickListener(view -> {
+            if (LoginClient.getInstance().isKakaoTalkLoginAvailable(Login.this)) {
+                LoginClient.getInstance().loginWithKakaoTalk(Login.this, callback);
+            } else {
+                LoginClient.getInstance().loginWithKakaoAccount(Login.this, callback);
             }
         });
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
+        logoutButton.setOnClickListener(view -> UserApiClient.getInstance().logout(new Function1<Throwable, Unit>() {
             @Override
-            public void onClick(View v) {
+            public Unit invoke(Throwable throwable) {
+                updateKakaoLoginUi();
+                return null;
+            }
+        }));
 
-                String userID= et_id.getText().toString();
-                String userPass= et_pass.getText().toString();
+        updateKakaoLoginUi();}
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            boolean success = jsonObject.getBoolean("success");
-                            if (success){//회원등록에 성공한 경우
-                                String userID= jsonObject.getString("userID");
-                                String userPass= jsonObject.getString("userPassword");
-                                Toast.makeText(getApplicationContext(),"로그인에 성공.",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Login.this,MainActivity.class);
-                                intent.putExtra("userID",userID);
-                                intent.putExtra("userPass",userPass);
-                                startActivity(intent);
-                            }else{
-                                Toast.makeText(getApplicationContext(),"로그인 실패.",Toast.LENGTH_SHORT).show();
-                                return;
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
+        private void updateKakaoLoginUi() {
+            UserApiClient.getInstance().me(new Function2<User, Throwable, Unit>() {
+                @Override
+                public Unit invoke(User user, Throwable throwable) {
+                    if (user != null) {
+                        Log.i(TAG, "invoke: id=" + user.getId());
+                        Log.i(TAG, "invoke: email=" + user.getKakaoAccount().getEmail());
+                        Log.i(TAG, "invoke: nickname=" + user.getKakaoAccount().getProfile().getNickname());
+                        Log.i(TAG, "invoke: gender=" + user.getKakaoAccount().getGender());
+                        Log.i(TAG, "invoke: age=" + user.getKakaoAccount().getAgeRange());
+                       nickName.setText(user.getKakaoAccount().getProfile().getNickname());
+                        Glide.with(profileImage).load(user.getKakaoAccount().getProfile().getThumbnailImageUrl()).circleCrop().into(profileImage);
+                        loginButton.setVisibility(View.GONE);
+                        logoutButton.setVisibility(View.VISIBLE);
+                    } else {
+                       nickName.setText(null);
+                        profileImage.setImageBitmap(null);
+                        loginButton.setVisibility(View.VISIBLE);
+                        logoutButton.setVisibility(View.GONE);
                     }
-                };
-                LoginRequest loginRequest = new LoginRequest(userID,userPass,responseListener);
-                RequestQueue queue = Volley.newRequestQueue(Login.this);
-                queue.add(loginRequest);
-            }
-        });
+                    if (throwable != null) {
+                        Log.w(TAG, "invoke: " + throwable.getLocalizedMessage());
+                    }
+                    return null;
+                }
+            });
+        }}
 
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
