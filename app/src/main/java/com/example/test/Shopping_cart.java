@@ -6,28 +6,46 @@ import android.view.View;
 import android.widget.ScrollView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+import java.net.MalformedURLException;
 
 public class Shopping_cart extends AppCompatActivity {
-
-    ScrollView cScrollview;
-
-
+    private EditText data1, data2, data3;
+    private Button btn_send;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping_cart);
-        cScrollview = findViewById(R.id.cart_scrollView);
-
-
+        setContentView(R.layout.activity_main);
+        NetworkUtil.setNetworkPolicy();
+        data1 = (EditText)findViewById(R.id.editText);
+        data2 = (EditText)findViewById(R.id.editText2);
+        data3 = (EditText)findViewById(R.id.editText3);
+        btn_send = (Button)findViewById(R.id.btn_send);
+        btn_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    PHPRequest request = new PHPRequest("http://127.0.0.1/test/Data_insert.php");
+                    String result = request.PhPtest(String.valueOf(data1.getText()),String.valueOf(data2.getText()),String.valueOf(data3.getText()));
+                    if(result.equals("1")){
+                        Toast.makeText(getApplication(),"들어감",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(getApplication(),"안 들어감",Toast.LENGTH_SHORT).show();
+                    }
+                }catch (MalformedURLException e){
+                    e.printStackTrace();
+                }
+            }
+        });
     }
-
-    public void cart_toHome(View view){ // 홈화면에서 장바구니로 이동
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void cart_toCart(View view){ // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
-        cScrollview.fullScroll(ScrollView.FOCUS_UP);
-    }
-
 }
+
+
