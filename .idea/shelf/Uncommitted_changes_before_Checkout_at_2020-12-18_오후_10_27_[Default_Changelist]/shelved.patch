@@ -1,0 +1,55 @@
+Index: app/src/main/res/layout/activity_market1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Market1\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#D0DD97\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView11\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n    </LinearLayout>\r\n\r\n    <ScrollView\r\n        android:id=\"@+id/scrollView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"695dp\"\r\n        android:layout_marginTop=\"0dp\"\r\n        android:fillViewport=\"true\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <android.support.design.widget.TabLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\">\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"메뉴\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"할인\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"추천메뉴\" />\r\n            </android.support.design.widget.TabLayout>\r\n\r\n            <android.support.v4.view.ViewPager\r\n                android:id=\"@+id/viewpager\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"match_parent\"></android.support.v4.view.ViewPager>\r\n        </LinearLayout>\r\n    </ScrollView>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginBottom=\"48dp\">\r\n\r\n        <Button\r\n            android:id=\"@+id/button\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:onClick=\"toHome\"\r\n            android:text=\"홈\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"장바구니\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"알림\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button5\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"내정보\" />\r\n    </LinearLayout>\r\n\r\n</LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_market1.xml	(revision 05f2e9043d1f237d6b631e754d79fd418ef8d092)
++++ app/src/main/res/layout/activity_market1.xml	(date 1608298033610)
+@@ -34,30 +34,34 @@
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+ 
+-            <android.support.design.widget.TabLayout
++            <com.google.android.material.tabs.TabLayout
++                android:id="@+id/tab"
+                 android:layout_width="match_parent"
+-                android:layout_height="50dp">
++                android:layout_height="50dp"
+ 
+-                <android.support.design.widget.TabItem
++                app:tabIndicatorColor="@android:color/black"
++                app:tabSelectedTextColor="@color/cardview_dark_background">
++
++                <com.google.android.material.tabs.TabItem
+                     android:layout_width="wrap_content"
+                     android:layout_height="50dp"
+                     android:text="메뉴" />
+ 
+-                <android.support.design.widget.TabItem
++                <com.google.android.material.tabs.TabItem
+                     android:layout_width="wrap_content"
+                     android:layout_height="50dp"
+-                    android:text="할인" />
++                    android:text="리뷰" />
+ 
+-                <android.support.design.widget.TabItem
++                <com.google.android.material.tabs.TabItem
+                     android:layout_width="wrap_content"
+                     android:layout_height="50dp"
+-                    android:text="추천메뉴" />
+-            </android.support.design.widget.TabLayout>
++                    android:text="매장정보" />
++            </com.google.android.material.tabs.TabLayout>
+ 
+-            <android.support.v4.view.ViewPager
++            <androidx.viewpager.widget.ViewPager
+                 android:id="@+id/viewpager"
+-                android:layout_width="wrap_content"
+-                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
++                android:layout_width="match_parent"
++                android:layout_height="362dp"></androidx.viewpager.widget.ViewPager>
+         </LinearLayout>
+     </ScrollView>
+ 

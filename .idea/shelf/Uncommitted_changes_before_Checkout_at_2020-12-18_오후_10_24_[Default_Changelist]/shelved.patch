@@ -1,0 +1,1547 @@
+Index: app/src/main/res/layout/activity_market1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Market1\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#D0DD97\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView11\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n    </LinearLayout>\r\n\r\n    <ScrollView\r\n        android:id=\"@+id/scrollView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"695dp\"\r\n        android:layout_marginTop=\"0dp\"\r\n        android:fillViewport=\"true\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <android.support.design.widget.TabLayout\r\n                android:id=\"@+id/tab\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\"\r\n\r\n                app:tabIndicatorColor=\"@android:color/black\"\r\n                app:tabSelectedTextColor=\"@color/cardview_dark_background\">\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"메뉴\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"리뷰\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"매장정보\" />\r\n            </android.support.design.widget.TabLayout>\r\n\r\n            <androidx.core.view.ViewPager\r\n                android:id=\"@+id/viewpager\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"362dp\"></androidx.core.view.ViewPager>\r\n        </LinearLayout>\r\n    </ScrollView>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginBottom=\"48dp\">\r\n\r\n        <Button\r\n            android:id=\"@+id/button\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:onClick=\"toHome\"\r\n            android:text=\"홈\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"장바구니\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"알림\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button5\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"내정보\" />\r\n    </LinearLayout>\r\n\r\n</LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_market1.xml	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
++++ app/src/main/res/layout/activity_market1.xml	(date 1608295097321)
+@@ -34,7 +34,7 @@
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+ 
+-            <android.support.design.widget.TabLayout
++            <com.google.android.material.tabs.TabLayout
+                 android:id="@+id/tab"
+                 android:layout_width="match_parent"
+                 android:layout_height="50dp"
+@@ -42,26 +42,26 @@
+                 app:tabIndicatorColor="@android:color/black"
+                 app:tabSelectedTextColor="@color/cardview_dark_background">
+ 
+-                <android.support.design.widget.TabItem
++                <com.google.android.material.tabs.TabItem
+                     android:layout_width="wrap_content"
+                     android:layout_height="50dp"
+                     android:text="메뉴" />
+ 
+-                <android.support.design.widget.TabItem
++                <com.google.android.material.tabs.TabItem
+                     android:layout_width="wrap_content"
+                     android:layout_height="50dp"
+                     android:text="리뷰" />
+ 
+-                <android.support.design.widget.TabItem
++                <com.google.android.material.tabs.TabItem
+                     android:layout_width="wrap_content"
+                     android:layout_height="50dp"
+                     android:text="매장정보" />
+-            </android.support.design.widget.TabLayout>
++            </com.google.android.material.tabs.TabLayout>
+ 
+-            <androidx.core.view.ViewPager
++            <androidx.viewpager.widget.ViewPager
+                 android:id="@+id/viewpager"
+                 android:layout_width="match_parent"
+-                android:layout_height="362dp"></androidx.core.view.ViewPager>
++                android:layout_height="362dp"></androidx.viewpager.widget.ViewPager>
+         </LinearLayout>
+     </ScrollView>
+ 
+Index: .idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
++++ .idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_rebase_[Default_Changelist]" date="1606831698755" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
++++ .idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_rebase_[Default_Changelist]1" date="1606832221481" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
++++ .idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
+@@ -1,733 +0,0 @@
+-Index: app/src/main/res/layout/activity_intro.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"#FFFFFF\"\r\n    android:backgroundTint=\"#D0DD97\"\r\n    tools:context=\".IntroActivity\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imageView\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"484dp\"\r\n        android:layout_marginStart=\"42dp\"\r\n        android:layout_marginTop=\"90dp\"\r\n        android:layout_marginEnd=\"42dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:srcCompat=\"@drawable/sinsun_logo\" />\r\n\r\n\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_intro.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_intro.xml	(date 1606825550904)
+-@@ -1,5 +1,5 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:app="http://schemas.android.com/apk/res-auto"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-@@ -10,7 +10,7 @@
+- 
+-     <ImageView
+-         android:id="@+id/imageView"
+--        android:layout_width="0dp"
+-+        android:layout_width="wrap_content"
+-         android:layout_height="484dp"
+-         android:layout_marginStart="42dp"
+-         android:layout_marginTop="90dp"
+-@@ -21,4 +21,4 @@
+-         app:srcCompat="@drawable/sinsun_logo" />
+- 
+- 
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/Fragment3.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v7.app.AppCompatActivity;\r\n\r\npublic class Fragment3 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment3.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment3.java	(date 1606825107296)
+-@@ -1,7 +1,9 @@
+- package com.example.test;
+- 
+- import android.os.Bundle;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class Fragment3 extends AppCompatActivity {
+- 
+-Index: app/src/main/res/layout/activity_main.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:gravity=\"center\"\r\n    android:orientation=\"vertical\">\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#D0DD97\"\r\n        android:orientation=\"horizontal\">\r\n\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView6\"\r\n            android:layout_width=\"430dp\"\r\n            android:layout_height=\"81dp\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n    </LinearLayout>\r\n\r\n    <ScrollView\r\n        android:id=\"@+id/scrollView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_marginTop=\"0dp\"\r\n        android:fillViewport=\"true\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/layout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <FrameLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"662dp\">\r\n\r\n\r\n                <TextView\r\n                    android:id=\"@+id/textView\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:text=\"TextViewASDFsdfsadfsadfasfsafsafasfasfsafasdfasdfasdfasdfasdfsadfasfasdfasfdasdfasd\r\n                            fafasfsadfasdfas\r\n                            fasfdsafasdf\r\n                            asdfsafasdf\\nsadfasdfsdf\\nasdfasdf\\nsdfsdf\\nasdfasdfsa\\nsdfasfsad\\nasffas\\nsasdfa\r\n                            \\nasdfga\\nasdf\\nasfd\\nasdfg\\nadfg\\nafg\\nasdfgan\\nsadfsgasfgaasdf\r\n                            \\n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)\" />\r\n\r\n            </FrameLayout>\r\n\r\n\r\n\r\n            <android.support.v4.view.ViewPager\r\n                android:id=\"@+id/view\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"110dp\"></android.support.v4.view.ViewPager>\r\n\r\n\r\n            <Button\r\n                android:id=\"@+id/Button1\"\r\n                android:layout_width=\"325dp\"\r\n                android:layout_height=\"200dp\"\r\n                android:onClick=\"toMarket1\"\r\n                android:orientation=\"vertical\"\r\n                android:text=\"반찬가게1\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/Button2\"\r\n                android:layout_width=\"325dp\"\r\n                android:layout_height=\"200dp\"\r\n                android:onClick=\"toMarket2\"\r\n                android:orientation=\"vertical\"\r\n                android:text=\"반찬가게2\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/Button3\"\r\n                android:layout_width=\"325dp\"\r\n                android:layout_height=\"200dp\"\r\n                android:onClick=\"toMarket3\"\r\n                android:orientation=\"vertical\"\r\n                android:text=\"반찬가게3\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/imageview\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:adjustViewBounds=\"true\"\r\n                android:background=\"@drawable/ic_launcher_background\"\r\n                android:scaleType=\"fitCenter\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textview\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:textSize=\"15sp\" />\r\n        </LinearLayout>\r\n    </ScrollView>\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"60dp\"\r\n        android:layout_marginBottom=\"48dp\"\r\n\r\n        >\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n\r\n            android:onClick=\"sendMessage\"\r\n            android:text=\"홈\"\r\n            />\r\n            android:onClick=\"toHome\"\r\n            android:text=\"홈\" />\r\n        <Button\r\n            android:id=\"@+id/btn_2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_shopping_cart\"\r\n            android:text=\"장바구니\"\r\n            />\r\n        <Button\r\n            android:id=\"@+id/btn_3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_notifications\"\r\n            android:text=\"알림\"\r\n            />\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_myinfo\"\r\n            android:onClick=\"toLogin\"\r\n            android:text=\"내정보\" />\r\n    </LinearLayout>\r\n</LinearLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_main.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_main.xml	(date 1606828074122)
+-@@ -60,15 +60,15 @@
+-                             \nasdfga\nasdf\nasfd\nasdfg\nadfg\nafg\nasdfgan\nsadfsgasfgaasdf
+-                             \n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)" />
+- 
+-+
+-             </FrameLayout>
+- 
+- 
+- 
+--            <android.support.v4.view.ViewPager
+-+            <androidx.viewpager.widget.ViewPager
+-                 android:id="@+id/view"
+-                 android:layout_width="wrap_content"
+--                android:layout_height="110dp"></android.support.v4.view.ViewPager>
+--
+-+                android:layout_height="110dp"></androidx.viewpager.widget.ViewPager>
+- 
+-             <Button
+-                 android:id="@+id/Button1"
+-Index: app/src/main/java/com/example/test/Market1.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.design.widget.TabLayout;\r\nimport android.support.v4.view.ViewPager;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class Market1 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_market1);\r\n\r\n        ViewPager vp = findViewById(R.id.viewpager);\r\n        VPAdapter adapter = new VPAdapter(getSupportFragmentManager());\r\n        vp.setAdapter(adapter);\r\n\r\n        TabLayout tab = findViewById(R.id.tab);\r\n        tab.setupWithViewPager(vp);\r\n    }\r\n\r\n    public void toHome(View view){\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Market1.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Market1.java	(date 1606825107288)
+-@@ -1,12 +1,15 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.design.widget.TabLayout;
+--import android.support.v4.view.ViewPager;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+import androidx.viewpager.widget.ViewPager;
+-+
+-+import com.google.android.material.tabs.TabLayout;
+-+
+- public class Market1 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/res/layout/activity_market1.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Market1\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#D0DD97\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView11\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n    </LinearLayout>\r\n\r\n    <ScrollView\r\n        android:id=\"@+id/scrollView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"695dp\"\r\n        android:layout_marginTop=\"0dp\"\r\n        android:fillViewport=\"true\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <android.support.design.widget.TabLayout\r\n                android:id=\"@+id/tab\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\"\r\n\r\n                app:tabIndicatorColor=\"@android:color/black\"\r\n                app:tabSelectedTextColor=\"@color/cardview_dark_background\">\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"메뉴\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"리뷰\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"매장정보\" />\r\n            </android.support.design.widget.TabLayout>\r\n\r\n            <android.support.v4.view.ViewPager\r\n                android:id=\"@+id/viewpager\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"362dp\"></android.support.v4.view.ViewPager>\r\n        </LinearLayout>\r\n    </ScrollView>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginBottom=\"48dp\">\r\n\r\n        <Button\r\n            android:id=\"@+id/button\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:onClick=\"toHome\"\r\n            android:text=\"홈\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"장바구니\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"알림\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button5\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"내정보\" />\r\n    </LinearLayout>\r\n\r\n</LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_market1.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_market1.xml	(date 1606824661244)
+-@@ -58,10 +58,10 @@
+-                     android:text="매장정보" />
+-             </android.support.design.widget.TabLayout>
+- 
+--            <android.support.v4.view.ViewPager
+-+            <androidx.core.view.ViewPager
+-                 android:id="@+id/viewpager"
+-                 android:layout_width="match_parent"
+--                android:layout_height="362dp"></android.support.v4.view.ViewPager>
+-+                android:layout_height="362dp"></androidx.core.view.ViewPager>
+-         </LinearLayout>
+-     </ScrollView>
+- 
+-Index: app/src/main/java/com/example/test/Fragment4.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v7.app.AppCompatActivity;\r\n\r\npublic class Fragment4 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment4.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment4.java	(date 1606825107283)
+-@@ -1,7 +1,9 @@
+- package com.example.test;
+- 
+- import android.os.Bundle;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class Fragment4 extends AppCompatActivity {
+- 
+-Index: app/src/main/java/com/example/test/VPAdapter.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.annotation.Nullable;\r\nimport android.support.v4.app.Fragment;\r\nimport android.support.v4.app.FragmentManager;\r\nimport android.support.v4.app.FragmentPagerAdapter;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class VPAdapter extends FragmentPagerAdapter {\r\n    private ArrayList<Fragment> items;\r\n    private ArrayList<String> itext = new ArrayList<String>();\r\n    public VPAdapter(FragmentManager fm) {\r\n        super(fm);\r\n        items = new ArrayList<Fragment>();\r\n        items.add(new FragmentMenu1());\r\n        items.add(new FragmentMenu2());\r\n        items.add(new FragmentMenu3());\r\n\r\n        itext.add(\"메뉴\");\r\n        itext.add(\"리뷰\");\r\n        itext.add(\"매장정보\");\r\n    }\r\n\r\n    @Nullable\r\n    @Override\r\n    public CharSequence getPageTitle(int position) {\r\n        return itext.get(position);\r\n    }\r\n\r\n    @Override\r\n    public Fragment getItem(int position) {\r\n        return items.get(position);\r\n    }\r\n\r\n    @Override\r\n    public int getCount() {\r\n        return items.size();\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/VPAdapter.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/VPAdapter.java	(date 1606825107223)
+-@@ -1,9 +1,14 @@
+- package com.example.test;
+- 
+--import android.support.annotation.Nullable;
+--import android.support.v4.app.Fragment;
+--import android.support.v4.app.FragmentManager;
+--import android.support.v4.app.FragmentPagerAdapter;
+-+
+-+
+-+
+-+
+-+
+-+
+-+import androidx.fragment.app.Fragment;
+-+import androidx.fragment.app.FragmentManager;
+-+import androidx.fragment.app.FragmentPagerAdapter;
+- 
+- import java.util.ArrayList;
+- 
+-@@ -22,7 +27,7 @@
+-         itext.add("매장정보");
+-     }
+- 
+--    @Nullable
+-+
+-     @Override
+-     public CharSequence getPageTitle(int position) {
+-         return itext.get(position);
+-Index: app/src/main/res/layout/activity_fragment1.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Fragment1\">\r\n\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_fragment1.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_fragment1.xml	(date 1606825550919)
+-@@ -1,9 +1,8 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+--    xmlns:app="http://schemas.android.com/apk/res-auto"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-     android:layout_height="match_parent"
+-     tools:context=".Fragment1">
+- 
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/MainActivity.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Context;\r\nimport android.content.Intent;\r\nimport android.support.v4.view.LayoutInflaterCompat;\r\nimport android.support.v4.view.PagerAdapter;\r\nimport android.support.v4.view.ViewPager;\r\nimport android.support.v4.app.Fragment;\r\nimport android.support.v4.app.FragmentTransaction;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.ScrollView;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n    Adapter adapter;\r\n    ViewPager viewPager;\r\n    ScrollView mScrollview;\r\n\r\n    Button btn1,btn2,btn3,btn4;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n\r\n        viewPager = (ViewPager) findViewById(R.id.view);\r\n        adapter = new Adapter(this);\r\n        viewPager.setAdapter(adapter);\r\n        mScrollview = findViewById(R.id.scrollView);\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    public void toMarket1(View view){ // 반찬가게 1로 바꿈\r\n        Intent intent = new Intent(getApplicationContext(), Market1.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void toMarket2(View view){ // 반찬가게 2로\r\n        Intent intent = new Intent(getApplicationContext(), Market2.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void toMarket3(View view){ // 반찬가게 3으로\r\n        Intent intent = new Intent(getApplicationContext(), Market3.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void toHome(View view){\r\n        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        //startActivity(intent);\r\n        // 홈화면에서 홈버튼 누르면 화면 맨위로 이동\r\n        mScrollview.fullScroll(ScrollView.FOCUS_UP);\r\n    }\r\n    public void toLogin(View view){\r\n        Intent intent = new Intent(getApplicationContext(), Login.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/MainActivity.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/MainActivity.java	(date 1606825107218)
+-@@ -1,20 +1,16 @@
+- package com.example.test;
+- 
+--import android.content.Context;
+- import android.content.Intent;
+--import android.support.v4.view.LayoutInflaterCompat;
+--import android.support.v4.view.PagerAdapter;
+--import android.support.v4.view.ViewPager;
+--import android.support.v4.app.Fragment;
+--import android.support.v4.app.FragmentTransaction;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+
+- import android.os.Bundle;
+--import android.view.LayoutInflater;
+--import android.view.View;
+- import android.view.View;
+- import android.widget.Button;
+- import android.widget.ScrollView;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+import androidx.viewpager.widget.ViewPager;
+-+
+- public class MainActivity extends AppCompatActivity {
+- 
+-     Adapter adapter;
+-Index: app/src/main/java/com/example/test/IntroActivity.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.content.Intent;\r\nimport android.os.Handler;\r\n\r\n\r\npublic class IntroActivity extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_intro);\r\n\r\n        Handler x = new Handler();\r\n        x.postDelayed(new SplashHandler(),1000);\r\n\r\n    }\r\n    public class SplashHandler implements Runnable{\r\n        public void run(){\r\n            Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n            startActivity(intent);\r\n            finish();\r\n        }\r\n    }\r\n\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/IntroActivity.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/IntroActivity.java	(date 1606825107278)
+-@@ -1,10 +1,12 @@
+- package com.example.test;
+- 
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.content.Intent;
+- import android.os.Handler;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class IntroActivity extends AppCompatActivity {
+- 
+-Index: app/src/main/java/com/example/test/Adapter.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.v4.view.PagerAdapter;\r\nimport android.content.Context;\r\nimport android.support.v4.view.PagerAdapter;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ImageView;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.TextView;\r\n\r\npublic class Adapter extends PagerAdapter {\r\n    private int[] images = {R.drawable.header_logo,R.drawable.header_logo,R.drawable.header_logo};\r\n    private LayoutInflater inflater;\r\n    private Context context;\r\n\r\n    public Adapter(Context context){\r\n        this.context = context;\r\n    }\r\n    @Override\r\n    public int getCount(){\r\n        return images.length;\r\n    }\r\n\r\n    @Override\r\n    public boolean isViewFromObject(View view, Object object){\r\n        return view ==((LinearLayout) object);\r\n    }\r\n    @Override\r\n    public Object instantiateItem(ViewGroup container, int position){\r\n        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);\r\n        View v = inflater.inflate(R.layout.slider,container, false);\r\n        ImageView imageView = (ImageView) v.findViewById(R.id.imageView);\r\n        imageView.setImageResource(images[position]);\r\n        container.addView(v);\r\n        return v;\r\n    }\r\n    public void destroyItem(ViewGroup container, int position, Object object){\r\n        container.invalidate();\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Adapter.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Adapter.java	(date 1606825107267)
+-@@ -1,14 +1,14 @@
+- package com.example.test;
+- 
+--import android.support.v4.view.PagerAdapter;
+-+
+- import android.content.Context;
+--import android.support.v4.view.PagerAdapter;
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- import android.widget.ImageView;
+- import android.widget.LinearLayout;
+--import android.widget.TextView;
+-+
+-+import androidx.viewpager.widget.PagerAdapter;
+- 
+- public class Adapter extends PagerAdapter {
+-     private int[] images = {R.drawable.header_logo,R.drawable.header_logo,R.drawable.header_logo};
+-Index: app/src/main/java/com/example/test/Market2.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class Market2 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_market2);\r\n    }\r\n    public void toHome(View view){\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Market2.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Market2.java	(date 1606825107238)
+-@@ -1,10 +1,12 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- public class Market2 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/java/com/example/test/FragmentMenu1.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v4.app.Fragment;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\n/**\r\n * A simple {@link Fragment} subclass.\r\n * Use the {@link FragmentMenu1#newInstance} factory method to\r\n * create an instance of this fragment.\r\n *\r\n */\r\npublic class FragmentMenu1 extends Fragment {\r\n\r\n    // TODO: Rename parameter arguments, choose names that match\r\n    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\n    private static final String ARG_PARAM1 = \"param1\";\r\n    private static final String ARG_PARAM2 = \"param2\";\r\n\r\n    // TODO: Rename and change types of parameters\r\n    private String mParam1;\r\n    private String mParam2;\r\n\r\n    /**\r\n     * Use this factory method to create a new instance of\r\n     * this fragment using the provided parameters.\r\n     *\r\n     * @param param1 Parameter 1.\r\n     * @param param2 Parameter 2.\r\n     * @return A new instance of fragment FragmentMenu1.\r\n     */\r\n    // TODO: Rename and change types and number of parameters\r\n    public static FragmentMenu1 newInstance(String param1, String param2) {\r\n        FragmentMenu1 fragment = new FragmentMenu1();\r\n        Bundle args = new Bundle();\r\n        args.putString(ARG_PARAM1, param1);\r\n        args.putString(ARG_PARAM2, param2);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }\r\n\r\n    public FragmentMenu1() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        if (getArguments() != null) {\r\n            mParam1 = getArguments().getString(ARG_PARAM1);\r\n            mParam2 = getArguments().getString(ARG_PARAM2);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_menu1, container, false);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/FragmentMenu1.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/FragmentMenu1.java	(date 1606825107247)
+-@@ -1,11 +1,14 @@
+- package com.example.test;
+- 
+-+
+- import android.os.Bundle;
+--import android.support.v4.app.Fragment;
+-+
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- 
+-+import androidx.fragment.app.Fragment;
+-+
+- /**
+-  * A simple {@link Fragment} subclass.
+-  * Use the {@link FragmentMenu1#newInstance} factory method to
+-Index: app/src/main/java/com/example/test/Market3.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class Market3 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_market3);\r\n    }\r\n\r\n    public void toHome(View view){\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Market3.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Market3.java	(date 1606825107273)
+-@@ -1,10 +1,12 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- public class Market3 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/AndroidManifest.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.test\">\r\n\r\n    <!--인터넷 권한선언-->\r\n    <uses-permission android:name=\"android.permission.INTERNET\"/>\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme.NoActionBar\">\r\n        <activity android:name=\".Login\"></activity>\r\n        <activity android:name=\".RegisterLogin\" />\r\n        <activity android:name=\".Market3\" />\r\n        <activity android:name=\".Market2\" />\r\n        <activity android:name=\".Market1\" />\r\n        <activity android:name=\".Fragment1\" />\r\n        <activity android:name=\".IntroActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity android:name=\".MainActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/AndroidManifest.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/AndroidManifest.xml	(date 1606829974677)
+-@@ -1,8 +1,10 @@
+- <?xml version="1.0" encoding="utf-8"?>
+- <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+--    package="com.example.test">
+-+    package="com.example.test"
+-+    xmlns:dist="http://schemas.android.com/apk/distribution">
+- 
+-     <!--인터넷 권한선언-->
+-+    <dist:module dist:instant="true" />
+-     <uses-permission android:name="android.permission.INTERNET"/>
+- 
+-     <application
+-@@ -11,7 +13,8 @@
+-         android:label="@string/app_name"
+-         android:roundIcon="@mipmap/ic_launcher_round"
+-         android:supportsRtl="true"
+--        android:theme="@style/AppTheme.NoActionBar">
+-+        android:theme="@style/AppTheme.NoActionBar"
+-+        android:networkSecurityConfig="@xml/network_security_config">
+-         <activity android:name=".Login"></activity>
+-         <activity android:name=".RegisterLogin" />
+-         <activity android:name=".Market3" />
+-Index: app/src/main/java/com/example/test/FragmentMenu2.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v4.app.Fragment;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\n/**\r\n * A simple {@link Fragment} subclass.\r\n * Use the {@link FragmentMenu2#newInstance} factory method to\r\n * create an instance of this fragment.\r\n *\r\n */\r\npublic class FragmentMenu2 extends Fragment {\r\n\r\n    // TODO: Rename parameter arguments, choose names that match\r\n    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\n    private static final String ARG_PARAM1 = \"param1\";\r\n    private static final String ARG_PARAM2 = \"param2\";\r\n\r\n    // TODO: Rename and change types of parameters\r\n    private String mParam1;\r\n    private String mParam2;\r\n\r\n    /**\r\n     * Use this factory method to create a new instance of\r\n     * this fragment using the provided parameters.\r\n     *\r\n     * @param param1 Parameter 1.\r\n     * @param param2 Parameter 2.\r\n     * @return A new instance of fragment FragmentMenu2.\r\n     */\r\n    // TODO: Rename and change types and number of parameters\r\n    public static FragmentMenu2 newInstance(String param1, String param2) {\r\n        FragmentMenu2 fragment = new FragmentMenu2();\r\n        Bundle args = new Bundle();\r\n        args.putString(ARG_PARAM1, param1);\r\n        args.putString(ARG_PARAM2, param2);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }\r\n\r\n    public FragmentMenu2() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        if (getArguments() != null) {\r\n            mParam1 = getArguments().getString(ARG_PARAM1);\r\n            mParam2 = getArguments().getString(ARG_PARAM2);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_menu2, container, false);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/FragmentMenu2.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/FragmentMenu2.java	(date 1606825107257)
+-@@ -1,11 +1,15 @@
+- package com.example.test;
+- 
+-+
+-+
+- import android.os.Bundle;
+--import android.support.v4.app.Fragment;
+-+
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- 
+-+import androidx.fragment.app.Fragment;
+-+
+- /**
+-  * A simple {@link Fragment} subclass.
+-  * Use the {@link FragmentMenu2#newInstance} factory method to
+-Index: app/src/main/java/com/example/test/Fragment2.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v7.app.AppCompatActivity;\r\n\r\npublic class Fragment2 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment2.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment2.java	(date 1606825107228)
+-@@ -1,7 +1,9 @@
+- package com.example.test;
+- 
+- import android.os.Bundle;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class Fragment2 extends AppCompatActivity {
+- 
+-Index: app/src/main/java/com/example/test/FragmentMenu3.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v4.app.Fragment;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\n/**\r\n * A simple {@link Fragment} subclass.\r\n * Use the {@link FragmentMenu3#newInstance} factory method to\r\n * create an instance of this fragment.\r\n */\r\npublic class FragmentMenu3 extends Fragment {\r\n\r\n    // TODO: Rename parameter arguments, choose names that match\r\n    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\n    private static final String ARG_PARAM1 = \"param1\";\r\n    private static final String ARG_PARAM2 = \"param2\";\r\n\r\n    // TODO: Rename and change types of parameters\r\n    private String mParam1;\r\n    private String mParam2;\r\n\r\n    public FragmentMenu3() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    /**\r\n     * Use this factory method to create a new instance of\r\n     * this fragment using the provided parameters.\r\n     *\r\n     * @param param1 Parameter 1.\r\n     * @param param2 Parameter 2.\r\n     * @return A new instance of fragment FragmentMenu3.\r\n     */\r\n    // TODO: Rename and change types and number of parameters\r\n    public static FragmentMenu3 newInstance(String param1, String param2) {\r\n        FragmentMenu3 fragment = new FragmentMenu3();\r\n        Bundle args = new Bundle();\r\n        args.putString(ARG_PARAM1, param1);\r\n        args.putString(ARG_PARAM2, param2);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        if (getArguments() != null) {\r\n            mParam1 = getArguments().getString(ARG_PARAM1);\r\n            mParam2 = getArguments().getString(ARG_PARAM2);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_menu3, container, false);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/FragmentMenu3.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/FragmentMenu3.java	(date 1606825107252)
+-@@ -1,11 +1,15 @@
+- package com.example.test;
+- 
+-+
+- import android.os.Bundle;
+--import android.support.v4.app.Fragment;
+-+
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- 
+-+import androidx.fragment.app.Fragment;
+-+
+-+
+- /**
+-  * A simple {@link Fragment} subclass.
+-  * Use the {@link FragmentMenu3#newInstance} factory method to
+-Index: app/src/main/java/com/example/test/Fragment1.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\n\r\npublic class Fragment1 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment1.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment1.java	(date 1606825107243)
+-@@ -1,8 +1,9 @@
+- package com.example.test;
+- 
+--import android.support.v7.app.AppCompatActivity;
+- import android.os.Bundle;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- public class Fragment1 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/res/layout/activity_register_login.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".RegisterLogin\">\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_name\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"200dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"이름\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_age\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"나이\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_name\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_name\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_name\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_id\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"24dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"아이디\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_age\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_age\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_age\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_pass\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"비밀번호\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_id\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_id\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_id\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_register\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:text=\"회원가입\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_pass\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_pass\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_pass\" />\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_register_login.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_register_login.xml	(date 1606827334788)
+-@@ -1,9 +1,10 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:app="http://schemas.android.com/apk/res-auto"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-     android:layout_height="match_parent"
+-+    android:orientation="vertical"
+-     tools:context=".RegisterLogin">
+- 
+-     <EditText
+-@@ -58,11 +59,11 @@
+- 
+-     <Button
+-         android:id="@+id/btn_register"
+--        android:layout_width="0dp"
+-+        android:layout_width="162dp"
+-         android:layout_height="wrap_content"
+-         android:layout_marginTop="16dp"
+-         android:text="회원가입"
+-         app:layout_constraintEnd_toEndOf="@+id/et_pass"
+-         app:layout_constraintStart_toStartOf="@+id/et_pass"
+-         app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/RegisterRequest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport com.android.volley.AuthFailureError;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.StringRequest;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic class RegisterRequest extends StringRequest {\r\n    //서버 url 설정(php 파일연동)\r\n    final static  private  String URL = \"http://whthakd.dothome.co.kr/Register.php\";\r\n    private Map<String, String> map;\r\n\r\n\r\n\r\n\r\n    public RegisterRequest(String userID, String userPassword, String userName, int userAge, Response.Listener<String> listener){\r\nsuper(Method.POST,URL,listener,null);\r\n\r\nmap = new HashMap();\r\nmap.put(\"userID\",userID);\r\n        map.put(\"userPassword\",userPassword);\r\n        map.put(\"userName\",userName);\r\n        map.put(\"userAge\",userAge+\"\");\r\n\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    protected Map<String, String> getParams() throws AuthFailureError {\r\n        return map;\r\n\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/RegisterRequest.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/RegisterRequest.java	(date 1606827173412)
+-@@ -9,7 +9,7 @@
+- 
+- public class RegisterRequest extends StringRequest {
+-     //서버 url 설정(php 파일연동)
+--    final static  private  String URL = "http://whthakd.dothome.co.kr/Register.php";
+-+    final static  private  String URL = "http://dhkfkr134.dothome.co.kr/Register.php";
+-     private Map<String, String> map;
+- 
+- 
+-Index: app/src/main/res/layout/activity_login.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Login\">\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_id\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"200dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"아이디\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"Name\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_pass\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"32dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"비밀번호\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_id\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_id\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_id\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_login\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"32dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:text=\"로그인\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_pass\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_pass\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_pass\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_register\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"32dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:text=\"회원가입\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/btn_login\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/btn_login\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/btn_login\" />\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_login.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_login.xml	(date 1606825550911)
+-@@ -1,9 +1,10 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:app="http://schemas.android.com/apk/res-auto"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-     android:layout_height="match_parent"
+-+    android:orientation="vertical"
+-     tools:context=".Login">
+- 
+-     <EditText
+-@@ -37,7 +38,7 @@
+- 
+-     <Button
+-         android:id="@+id/btn_login"
+--        android:layout_width="0dp"
+-+        android:layout_width="wrap_content"
+-         android:layout_height="wrap_content"
+-         android:layout_marginStart="8dp"
+-         android:layout_marginTop="32dp"
+-@@ -49,7 +50,7 @@
+- 
+-     <Button
+-         android:id="@+id/btn_register"
+--        android:layout_width="0dp"
+-+        android:layout_width="wrap_content"
+-         android:layout_height="wrap_content"
+-         android:layout_marginStart="8dp"
+-         android:layout_marginTop="32dp"
+-@@ -58,4 +59,4 @@
+-         app:layout_constraintEnd_toEndOf="@+id/btn_login"
+-         app:layout_constraintStart_toStartOf="@+id/btn_login"
+-         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/LoginRequest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport com.android.volley.AuthFailureError;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.StringRequest;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic class LoginRequest extends StringRequest {\r\n    //서버 url 설정(php 파일연동)\r\n    final static  private  String URL = \"http://whthakd.dothome.co.kr/Login.php\";\r\n    private Map<String, String> map;\r\n\r\n\r\n\r\n\r\n    public LoginRequest(String userID, String userPassword, Response.Listener<String> listener){\r\nsuper(Method.POST,URL,listener,null);\r\n\r\nmap = new HashMap();\r\nmap.put(\"userID\",userID);\r\n        map.put(\"userPassword\",userPassword);\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    protected Map<String, String> getParams() throws AuthFailureError {\r\n        return map;\r\n        \r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/LoginRequest.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/LoginRequest.java	(date 1606828007741)
+-@@ -9,7 +9,7 @@
+- 
+- public class LoginRequest extends StringRequest {
+-     //서버 url 설정(php 파일연동)
+--    final static  private  String URL = "http://whthakd.dothome.co.kr/Login.php";
+-+    final static  private  String URL = "http://dhkfkr134.dothome.co.kr/Login.php";
+-     private Map<String, String> map;
+- 
+- 
+-Index: app/src/main/java/com/example/test/Login.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.Toast;\r\n\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.Volley;\r\n\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\npublic class Login extends AppCompatActivity {\r\n    private EditText et_id,et_pass;\r\n    private Button btn_login,btn_register;\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n\r\n        et_id = findViewById(R.id.et_id);\r\n        et_pass = findViewById(R.id.et_pass);\r\n        btn_login = findViewById(R.id.btn_login);\r\n        btn_register = findViewById(R.id.btn_register);\r\n\r\n//회원가입 버튼을 클릭시 수행\r\n        btn_register.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(Login.this,RegisterLogin.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        btn_login.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n\r\n                String userID= et_id.getText().toString();\r\n                String userPass= et_pass.getText().toString();\r\n\r\n                Response.Listener<String> responseListener = new Response.Listener<String>() {\r\n                    @Override\r\n                    public void onResponse(String response) {\r\n                        try {\r\n                            JSONObject jsonObject = new JSONObject(response);\r\n                            boolean success = jsonObject.getBoolean(\"success\");\r\n                            if (success){//회원등록에 성공한 경우\r\n                                String userID= jsonObject.getString(\"userID\");\r\n                                String userPass= jsonObject.getString(\"userPassword\");\r\n                                Toast.makeText(getApplicationContext(),\"로그인에 성공.\",Toast.LENGTH_SHORT).show();\r\n                                Intent intent = new Intent(Login.this,MainActivity.class);\r\n                                intent.putExtra(\"userID\",userID);\r\n                                intent.putExtra(\"userPass\",userPass);\r\n                                startActivity(intent);\r\n                            }else{\r\n                                Toast.makeText(getApplicationContext(),\"로그인 실패.\",Toast.LENGTH_SHORT).show();\r\n                                return;\r\n                            }\r\n                        } catch (JSONException e) {\r\n                            e.printStackTrace();\r\n                        }\r\n\r\n                    }\r\n                };\r\n                LoginRequest loginRequest = new LoginRequest(userID,userPass,responseListener);\r\n                RequestQueue queue = Volley.newRequestQueue(Login.this);\r\n                queue.add(loginRequest);\r\n            }\r\n        });\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Login.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Login.java	(date 1606825107211)
+-@@ -1,13 +1,15 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- import android.widget.Button;
+- import android.widget.EditText;
+- import android.widget.Toast;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- import com.android.volley.RequestQueue;
+- import com.android.volley.Response;
+- import com.android.volley.toolbox.Volley;
+-Index: app/src/main/java/com/example/test/RegisterLogin.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.Toast;\r\n\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.Volley;\r\n\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\npublic class RegisterLogin extends AppCompatActivity {\r\n\r\n\r\n    private EditText et_id,et_pass,et_name,et_age;\r\n    private Button btn_register;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_register_login);\r\n\r\n\r\n//아이디값찾아주기\r\n    et_id = findViewById(R.id.et_id);\r\n    et_pass = findViewById(R.id.et_pass);\r\n    et_name = findViewById(R.id.et_name);\r\n    et_age = findViewById(R.id.et_age);\r\n\r\n\r\n       //회원가입 버튼 클릭시 수행\r\n        btn_register = findViewById(R.id.btn_register);\r\n        btn_register.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n               //입력값을 가져온다\r\n\r\n                String userID= et_id.getText().toString();\r\n                String userPass= et_pass.getText().toString();\r\n                String userName= et_name.getText().toString();\r\n                int userAge= Integer.parseInt(et_age.getText().toString());\r\n\r\n                Response.Listener<String> responseListener = new Response.Listener<String>() {\r\n                    @Override\r\n                    public void onResponse(String response) {\r\n                        try {\r\n                            JSONObject jsonObject = new JSONObject(response);\r\n                            boolean success = jsonObject.getBoolean(\"success\");\r\n                            if (success){//회원등록에 성공한 경우\r\n                                Toast.makeText(getApplicationContext(),\"신선 회원가입을 축하드립니다.\",Toast.LENGTH_SHORT).show();\r\n                                Intent intent = new Intent(RegisterLogin.this,Login.class);\r\n                                startActivity(intent);\r\n                            }else{\r\n                                Toast.makeText(getApplicationContext(),\"회원가입 실패.\",Toast.LENGTH_SHORT).show();\r\n                                return;\r\n                            }\r\n                        } catch (JSONException e) {\r\n                            e.printStackTrace();\r\n                        }\r\n\r\n                    }\r\n                };\r\n\r\n               //서버로 volly를 이용해서 요청함\r\n                RegisterRequest registerRequest = new RegisterRequest(userID,userPass,userName,userAge,responseListener);\r\n                RequestQueue queue = Volley.newRequestQueue(RegisterLogin.this);\r\n                queue.add(registerRequest);\r\n\r\n\r\n\r\n\r\n            }\r\n        });\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/RegisterLogin.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/RegisterLogin.java	(date 1606830359491)
+-@@ -1,13 +1,16 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+-+import android.util.Log;
+- import android.view.View;
+- import android.widget.Button;
+- import android.widget.EditText;
+- import android.widget.Toast;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- import com.android.volley.RequestQueue;
+- import com.android.volley.Response;
+- import com.android.volley.toolbox.Volley;
+-@@ -49,9 +52,11 @@
+-                     @Override
+-                     public void onResponse(String response) {
+-                         try {
+-+
+-                             JSONObject jsonObject = new JSONObject(response);
+-                             boolean success = jsonObject.getBoolean("success");
+-                             if (success){//회원등록에 성공한 경우
+-+
+-                                 Toast.makeText(getApplicationContext(),"신선 회원가입을 축하드립니다.",Toast.LENGTH_SHORT).show();
+-                                 Intent intent = new Intent(RegisterLogin.this,Login.class);
+-                                 startActivity(intent);
+-Index: gradle.properties
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+># Project-wide Gradle settings.\r\n# IDE (e.g. Android Studio) users:\r\n# Gradle settings configured through the IDE *will override*\r\n# any settings specified in this file.\r\n# For more details on how to configure your build environment visit\r\n# http://www.gradle.org/docs/current/userguide/build_environment.html\r\n# Specifies the JVM arguments used for the daemon process.\r\n# The setting is particularly useful for tweaking memory settings.\r\norg.gradle.jvmargs=-Xmx2048m\r\n# When configured, Gradle will run in incubating parallel mode.\r\n# This option should only be used with decoupled projects. More details, visit\r\n# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\r\n# org.gradle.parallel=true
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>x-windows-949
+-===================================================================
+---- gradle.properties	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ gradle.properties	(date 1606824661262)
+-@@ -6,6 +6,8 @@
+- # http://www.gradle.org/docs/current/userguide/build_environment.html
+- # Specifies the JVM arguments used for the daemon process.
+- # The setting is particularly useful for tweaking memory settings.
+-+android.enableJetifier=true
+-+android.useAndroidX=true
+- org.gradle.jvmargs=-Xmx2048m
+- # When configured, Gradle will run in incubating parallel mode.
+- # This option should only be used with decoupled projects. More details, visit
+-Index: app/build.gradle
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>apply plugin: 'com.android.application'\r\n\r\nandroid {\r\n    compileSdkVersion 30\r\n    buildToolsVersion \"30.0.2\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.test\"\r\n        minSdkVersion 26\r\n        targetSdkVersion 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"android.support.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation fileTree(dir: \"libs\", include: [\"*.jar\"])\r\n    implementation 'com.android.support:appcompat-v7:28.0.0'\r\n    implementation 'com.android.support.constraint:constraint-layout:1.1.3'\r\n    implementation 'com.android.support:design:28.0.0'\r\n    implementation 'com.android.support:support-v4:28.0.0'\r\n    implementation 'com.android.volley:volley:1.1.1'\r\n    testImplementation 'junit:junit:4.12'\r\n    androidTestImplementation 'com.android.support.test:runner:1.0.2'\r\n    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'\r\n\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/build.gradle	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/build.gradle	(date 1606828007716)
+-@@ -11,7 +11,7 @@
+-         versionCode 1
+-         versionName "1.0"
+- 
+--        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+-+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+-     }
+- 
+-     buildTypes {
+-@@ -24,13 +24,14 @@
+- 
+- dependencies {
+-     implementation fileTree(dir: "libs", include: ["*.jar"])
+--    implementation 'com.android.support:appcompat-v7:28.0.0'
+--    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+--    implementation 'com.android.support:design:28.0.0'
+--    implementation 'com.android.support:support-v4:28.0.0'
+-+    implementation 'androidx.appcompat:appcompat:1.0.0'
+-+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+-+    implementation 'com.google.android.material:material:1.0.0'
+-+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+-     implementation 'com.android.volley:volley:1.1.1'
+-+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+-     testImplementation 'junit:junit:4.12'
+--    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+--    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+-+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+-+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+- 
+- }
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
++++ .idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch	(revision 09452b29f1e0588374831667bc2e8b08e62345d1)
+@@ -1,733 +0,0 @@
+-Index: app/src/main/java/com/example/test/FragmentMenu1.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v4.app.Fragment;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\n/**\r\n * A simple {@link Fragment} subclass.\r\n * Use the {@link FragmentMenu1#newInstance} factory method to\r\n * create an instance of this fragment.\r\n *\r\n */\r\npublic class FragmentMenu1 extends Fragment {\r\n\r\n    // TODO: Rename parameter arguments, choose names that match\r\n    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\n    private static final String ARG_PARAM1 = \"param1\";\r\n    private static final String ARG_PARAM2 = \"param2\";\r\n\r\n    // TODO: Rename and change types of parameters\r\n    private String mParam1;\r\n    private String mParam2;\r\n\r\n    /**\r\n     * Use this factory method to create a new instance of\r\n     * this fragment using the provided parameters.\r\n     *\r\n     * @param param1 Parameter 1.\r\n     * @param param2 Parameter 2.\r\n     * @return A new instance of fragment FragmentMenu1.\r\n     */\r\n    // TODO: Rename and change types and number of parameters\r\n    public static FragmentMenu1 newInstance(String param1, String param2) {\r\n        FragmentMenu1 fragment = new FragmentMenu1();\r\n        Bundle args = new Bundle();\r\n        args.putString(ARG_PARAM1, param1);\r\n        args.putString(ARG_PARAM2, param2);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }\r\n\r\n    public FragmentMenu1() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        if (getArguments() != null) {\r\n            mParam1 = getArguments().getString(ARG_PARAM1);\r\n            mParam2 = getArguments().getString(ARG_PARAM2);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_menu1, container, false);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/FragmentMenu1.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/FragmentMenu1.java	(date 1606831698578)
+-@@ -1,11 +1,14 @@
+- package com.example.test;
+- 
+-+
+- import android.os.Bundle;
+--import android.support.v4.app.Fragment;
+-+
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- 
+-+import androidx.fragment.app.Fragment;
+-+
+- /**
+-  * A simple {@link Fragment} subclass.
+-  * Use the {@link FragmentMenu1#newInstance} factory method to
+-Index: app/src/main/res/layout/activity_intro.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"#FFFFFF\"\r\n    android:backgroundTint=\"#D0DD97\"\r\n    tools:context=\".IntroActivity\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imageView\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"484dp\"\r\n        android:layout_marginStart=\"42dp\"\r\n        android:layout_marginTop=\"90dp\"\r\n        android:layout_marginEnd=\"42dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:srcCompat=\"@drawable/sinsun_logo\" />\r\n\r\n\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_intro.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_intro.xml	(date 1606831698507)
+-@@ -1,5 +1,5 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:app="http://schemas.android.com/apk/res-auto"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-@@ -10,7 +10,7 @@
+- 
+-     <ImageView
+-         android:id="@+id/imageView"
+--        android:layout_width="0dp"
+-+        android:layout_width="wrap_content"
+-         android:layout_height="484dp"
+-         android:layout_marginStart="42dp"
+-         android:layout_marginTop="90dp"
+-@@ -21,4 +21,4 @@
+-         app:srcCompat="@drawable/sinsun_logo" />
+- 
+- 
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/Fragment3.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v7.app.AppCompatActivity;\r\n\r\npublic class Fragment3 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment3.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment3.java	(date 1606831698513)
+-@@ -1,7 +1,9 @@
+- package com.example.test;
+- 
+- import android.os.Bundle;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class Fragment3 extends AppCompatActivity {
+- 
+-Index: app/src/main/res/layout/activity_main.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:gravity=\"center\"\r\n    android:orientation=\"vertical\">\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#D0DD97\"\r\n        android:orientation=\"horizontal\">\r\n\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView6\"\r\n            android:layout_width=\"430dp\"\r\n            android:layout_height=\"81dp\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n    </LinearLayout>\r\n\r\n    <ScrollView\r\n        android:id=\"@+id/scrollView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_marginTop=\"0dp\"\r\n        android:fillViewport=\"true\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/layout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <FrameLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"662dp\">\r\n\r\n\r\n                <TextView\r\n                    android:id=\"@+id/textView\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:text=\"TextViewASDFsdfsadfsadfasfsafsafasfasfsafasdfasdfasdfasdfasdfsadfasfasdfasfdasdfasd\r\n                            fafasfsadfasdfas\r\n                            fasfdsafasdf\r\n                            asdfsafasdf\\nsadfasdfsdf\\nasdfasdf\\nsdfsdf\\nasdfasdfsa\\nsdfasfsad\\nasffas\\nsasdfa\r\n                            \\nasdfga\\nasdf\\nasfd\\nasdfg\\nadfg\\nafg\\nasdfgan\\nsadfsgasfgaasdf\r\n                            \\n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)\" />\r\n\r\n            </FrameLayout>\r\n\r\n\r\n\r\n            <android.support.v4.view.ViewPager\r\n                android:id=\"@+id/view\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"110dp\"></android.support.v4.view.ViewPager>\r\n\r\n\r\n            <Button\r\n                android:id=\"@+id/Button1\"\r\n                android:layout_width=\"325dp\"\r\n                android:layout_height=\"200dp\"\r\n                android:onClick=\"toMarket1\"\r\n                android:orientation=\"vertical\"\r\n                android:text=\"반찬가게1\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/Button2\"\r\n                android:layout_width=\"325dp\"\r\n                android:layout_height=\"200dp\"\r\n                android:onClick=\"toMarket2\"\r\n                android:orientation=\"vertical\"\r\n                android:text=\"반찬가게2\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/Button3\"\r\n                android:layout_width=\"325dp\"\r\n                android:layout_height=\"200dp\"\r\n                android:onClick=\"toMarket3\"\r\n                android:orientation=\"vertical\"\r\n                android:text=\"반찬가게3\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/imageview\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:adjustViewBounds=\"true\"\r\n                android:background=\"@drawable/ic_launcher_background\"\r\n                android:scaleType=\"fitCenter\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textview\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:textSize=\"15sp\" />\r\n        </LinearLayout>\r\n    </ScrollView>\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"60dp\"\r\n        android:layout_marginBottom=\"48dp\"\r\n\r\n        >\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n\r\n            android:onClick=\"sendMessage\"\r\n            android:text=\"홈\"\r\n            />\r\n            android:onClick=\"toHome\"\r\n            android:text=\"홈\" />\r\n        <Button\r\n            android:id=\"@+id/btn_2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_shopping_cart\"\r\n            android:text=\"장바구니\"\r\n            />\r\n        <Button\r\n            android:id=\"@+id/btn_3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_notifications\"\r\n            android:text=\"알림\"\r\n            />\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_myinfo\"\r\n            android:onClick=\"toLogin\"\r\n            android:text=\"내정보\" />\r\n    </LinearLayout>\r\n</LinearLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_main.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_main.xml	(date 1606831698520)
+-@@ -60,15 +60,15 @@
+-                             \nasdfga\nasdf\nasfd\nasdfg\nadfg\nafg\nasdfgan\nsadfsgasfgaasdf
+-                             \n이상향 적는곳, 배너는 viewpager라는외부라이브러리 써야하는것같아서 아직안함(슬라이드되는거)" />
+- 
+-+
+-             </FrameLayout>
+- 
+- 
+- 
+--            <android.support.v4.view.ViewPager
+-+            <androidx.viewpager.widget.ViewPager
+-                 android:id="@+id/view"
+-                 android:layout_width="wrap_content"
+--                android:layout_height="110dp"></android.support.v4.view.ViewPager>
+--
+-+                android:layout_height="110dp"></androidx.viewpager.widget.ViewPager>
+- 
+-             <Button
+-                 android:id="@+id/Button1"
+-Index: app/src/main/java/com/example/test/Market1.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.design.widget.TabLayout;\r\nimport android.support.v4.view.ViewPager;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class Market1 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_market1);\r\n\r\n        ViewPager vp = findViewById(R.id.viewpager);\r\n        VPAdapter adapter = new VPAdapter(getSupportFragmentManager());\r\n        vp.setAdapter(adapter);\r\n\r\n        TabLayout tab = findViewById(R.id.tab);\r\n        tab.setupWithViewPager(vp);\r\n    }\r\n\r\n    public void toHome(View view){\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Market1.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Market1.java	(date 1606831698525)
+-@@ -1,12 +1,15 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.design.widget.TabLayout;
+--import android.support.v4.view.ViewPager;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+import androidx.viewpager.widget.ViewPager;
+-+
+-+import com.google.android.material.tabs.TabLayout;
+-+
+- public class Market1 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/res/layout/activity_market1.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Market1\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#D0DD97\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView11\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n    </LinearLayout>\r\n\r\n    <ScrollView\r\n        android:id=\"@+id/scrollView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"695dp\"\r\n        android:layout_marginTop=\"0dp\"\r\n        android:fillViewport=\"true\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <android.support.design.widget.TabLayout\r\n                android:id=\"@+id/tab\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\"\r\n\r\n                app:tabIndicatorColor=\"@android:color/black\"\r\n                app:tabSelectedTextColor=\"@color/cardview_dark_background\">\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"메뉴\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"리뷰\" />\r\n\r\n                <android.support.design.widget.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"매장정보\" />\r\n            </android.support.design.widget.TabLayout>\r\n\r\n            <android.support.v4.view.ViewPager\r\n                android:id=\"@+id/viewpager\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"362dp\"></android.support.v4.view.ViewPager>\r\n        </LinearLayout>\r\n    </ScrollView>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginBottom=\"48dp\">\r\n\r\n        <Button\r\n            android:id=\"@+id/button\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:onClick=\"toHome\"\r\n            android:text=\"홈\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"장바구니\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"알림\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/button5\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:text=\"내정보\" />\r\n    </LinearLayout>\r\n\r\n</LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_market1.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_market1.xml	(date 1606831698531)
+-@@ -58,10 +58,10 @@
+-                     android:text="매장정보" />
+-             </android.support.design.widget.TabLayout>
+- 
+--            <android.support.v4.view.ViewPager
+-+            <androidx.core.view.ViewPager
+-                 android:id="@+id/viewpager"
+-                 android:layout_width="match_parent"
+--                android:layout_height="362dp"></android.support.v4.view.ViewPager>
+-+                android:layout_height="362dp"></androidx.core.view.ViewPager>
+-         </LinearLayout>
+-     </ScrollView>
+- 
+-Index: app/src/main/java/com/example/test/Fragment4.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v7.app.AppCompatActivity;\r\n\r\npublic class Fragment4 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment4.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment4.java	(date 1606831698539)
+-@@ -1,7 +1,9 @@
+- package com.example.test;
+- 
+- import android.os.Bundle;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class Fragment4 extends AppCompatActivity {
+- 
+-Index: app/src/main/java/com/example/test/VPAdapter.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.annotation.Nullable;\r\nimport android.support.v4.app.Fragment;\r\nimport android.support.v4.app.FragmentManager;\r\nimport android.support.v4.app.FragmentPagerAdapter;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class VPAdapter extends FragmentPagerAdapter {\r\n    private ArrayList<Fragment> items;\r\n    private ArrayList<String> itext = new ArrayList<String>();\r\n    public VPAdapter(FragmentManager fm) {\r\n        super(fm);\r\n        items = new ArrayList<Fragment>();\r\n        items.add(new FragmentMenu1());\r\n        items.add(new FragmentMenu2());\r\n        items.add(new FragmentMenu3());\r\n\r\n        itext.add(\"메뉴\");\r\n        itext.add(\"리뷰\");\r\n        itext.add(\"매장정보\");\r\n    }\r\n\r\n    @Nullable\r\n    @Override\r\n    public CharSequence getPageTitle(int position) {\r\n        return itext.get(position);\r\n    }\r\n\r\n    @Override\r\n    public Fragment getItem(int position) {\r\n        return items.get(position);\r\n    }\r\n\r\n    @Override\r\n    public int getCount() {\r\n        return items.size();\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/VPAdapter.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/VPAdapter.java	(date 1606831698545)
+-@@ -1,9 +1,14 @@
+- package com.example.test;
+- 
+--import android.support.annotation.Nullable;
+--import android.support.v4.app.Fragment;
+--import android.support.v4.app.FragmentManager;
+--import android.support.v4.app.FragmentPagerAdapter;
+-+
+-+
+-+
+-+
+-+
+-+
+-+import androidx.fragment.app.Fragment;
+-+import androidx.fragment.app.FragmentManager;
+-+import androidx.fragment.app.FragmentPagerAdapter;
+- 
+- import java.util.ArrayList;
+- 
+-@@ -22,7 +27,7 @@
+-         itext.add("매장정보");
+-     }
+- 
+--    @Nullable
+-+
+-     @Override
+-     public CharSequence getPageTitle(int position) {
+-         return itext.get(position);
+-Index: app/src/main/res/layout/activity_fragment1.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Fragment1\">\r\n\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_fragment1.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_fragment1.xml	(date 1606831698551)
+-@@ -1,9 +1,8 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+--    xmlns:app="http://schemas.android.com/apk/res-auto"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-     android:layout_height="match_parent"
+-     tools:context=".Fragment1">
+- 
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/MainActivity.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Context;\r\nimport android.content.Intent;\r\nimport android.support.v4.view.LayoutInflaterCompat;\r\nimport android.support.v4.view.PagerAdapter;\r\nimport android.support.v4.view.ViewPager;\r\nimport android.support.v4.app.Fragment;\r\nimport android.support.v4.app.FragmentTransaction;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.ScrollView;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n    Adapter adapter;\r\n    ViewPager viewPager;\r\n    ScrollView mScrollview;\r\n\r\n    Button btn1,btn2,btn3,btn4;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n\r\n        viewPager = (ViewPager) findViewById(R.id.view);\r\n        adapter = new Adapter(this);\r\n        viewPager.setAdapter(adapter);\r\n        mScrollview = findViewById(R.id.scrollView);\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    public void toMarket1(View view){ // 반찬가게 1로 바꿈\r\n        Intent intent = new Intent(getApplicationContext(), Market1.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void toMarket2(View view){ // 반찬가게 2로\r\n        Intent intent = new Intent(getApplicationContext(), Market2.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void toMarket3(View view){ // 반찬가게 3으로\r\n        Intent intent = new Intent(getApplicationContext(), Market3.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    public void toHome(View view){\r\n        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        //startActivity(intent);\r\n        // 홈화면에서 홈버튼 누르면 화면 맨위로 이동\r\n        mScrollview.fullScroll(ScrollView.FOCUS_UP);\r\n    }\r\n    public void toLogin(View view){\r\n        Intent intent = new Intent(getApplicationContext(), Login.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/MainActivity.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/MainActivity.java	(date 1606831698557)
+-@@ -1,20 +1,16 @@
+- package com.example.test;
+- 
+--import android.content.Context;
+- import android.content.Intent;
+--import android.support.v4.view.LayoutInflaterCompat;
+--import android.support.v4.view.PagerAdapter;
+--import android.support.v4.view.ViewPager;
+--import android.support.v4.app.Fragment;
+--import android.support.v4.app.FragmentTransaction;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+
+- import android.os.Bundle;
+--import android.view.LayoutInflater;
+--import android.view.View;
+- import android.view.View;
+- import android.widget.Button;
+- import android.widget.ScrollView;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+import androidx.viewpager.widget.ViewPager;
+-+
+- public class MainActivity extends AppCompatActivity {
+- 
+-     Adapter adapter;
+-Index: app/src/main/java/com/example/test/IntroActivity.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.content.Intent;\r\nimport android.os.Handler;\r\n\r\n\r\npublic class IntroActivity extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_intro);\r\n\r\n        Handler x = new Handler();\r\n        x.postDelayed(new SplashHandler(),1000);\r\n\r\n    }\r\n    public class SplashHandler implements Runnable{\r\n        public void run(){\r\n            Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n            startActivity(intent);\r\n            finish();\r\n        }\r\n    }\r\n\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/IntroActivity.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/IntroActivity.java	(date 1606831698562)
+-@@ -1,10 +1,12 @@
+- package com.example.test;
+- 
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.content.Intent;
+- import android.os.Handler;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class IntroActivity extends AppCompatActivity {
+- 
+-Index: app/src/main/java/com/example/test/Adapter.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.v4.view.PagerAdapter;\r\nimport android.content.Context;\r\nimport android.support.v4.view.PagerAdapter;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ImageView;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.TextView;\r\n\r\npublic class Adapter extends PagerAdapter {\r\n    private int[] images = {R.drawable.header_logo,R.drawable.header_logo,R.drawable.header_logo};\r\n    private LayoutInflater inflater;\r\n    private Context context;\r\n\r\n    public Adapter(Context context){\r\n        this.context = context;\r\n    }\r\n    @Override\r\n    public int getCount(){\r\n        return images.length;\r\n    }\r\n\r\n    @Override\r\n    public boolean isViewFromObject(View view, Object object){\r\n        return view ==((LinearLayout) object);\r\n    }\r\n    @Override\r\n    public Object instantiateItem(ViewGroup container, int position){\r\n        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);\r\n        View v = inflater.inflate(R.layout.slider,container, false);\r\n        ImageView imageView = (ImageView) v.findViewById(R.id.imageView);\r\n        imageView.setImageResource(images[position]);\r\n        container.addView(v);\r\n        return v;\r\n    }\r\n    public void destroyItem(ViewGroup container, int position, Object object){\r\n        container.invalidate();\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Adapter.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Adapter.java	(date 1606831698567)
+-@@ -1,14 +1,14 @@
+- package com.example.test;
+- 
+--import android.support.v4.view.PagerAdapter;
+-+
+- import android.content.Context;
+--import android.support.v4.view.PagerAdapter;
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- import android.widget.ImageView;
+- import android.widget.LinearLayout;
+--import android.widget.TextView;
+-+
+-+import androidx.viewpager.widget.PagerAdapter;
+- 
+- public class Adapter extends PagerAdapter {
+-     private int[] images = {R.drawable.header_logo,R.drawable.header_logo,R.drawable.header_logo};
+-Index: app/src/main/java/com/example/test/Market2.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class Market2 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_market2);\r\n    }\r\n    public void toHome(View view){\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Market2.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Market2.java	(date 1606831698573)
+-@@ -1,10 +1,12 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- public class Market2 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/java/com/example/test/Market3.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class Market3 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_market3);\r\n    }\r\n\r\n    public void toHome(View view){\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Market3.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Market3.java	(date 1606831698585)
+-@@ -1,10 +1,12 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- public class Market3 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/AndroidManifest.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.test\">\r\n\r\n    <!--인터넷 권한선언-->\r\n    <uses-permission android:name=\"android.permission.INTERNET\"/>\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme.NoActionBar\">\r\n        <activity android:name=\".Login\"></activity>\r\n        <activity android:name=\".RegisterLogin\" />\r\n        <activity android:name=\".Market3\" />\r\n        <activity android:name=\".Market2\" />\r\n        <activity android:name=\".Market1\" />\r\n        <activity android:name=\".Fragment1\" />\r\n        <activity android:name=\".IntroActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity android:name=\".MainActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/AndroidManifest.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/AndroidManifest.xml	(date 1606831698590)
+-@@ -1,8 +1,10 @@
+- <?xml version="1.0" encoding="utf-8"?>
+- <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+--    package="com.example.test">
+-+    package="com.example.test"
+-+    xmlns:dist="http://schemas.android.com/apk/distribution">
+- 
+-     <!--인터넷 권한선언-->
+-+    <dist:module dist:instant="true" />
+-     <uses-permission android:name="android.permission.INTERNET"/>
+- 
+-     <application
+-@@ -11,7 +13,8 @@
+-         android:label="@string/app_name"
+-         android:roundIcon="@mipmap/ic_launcher_round"
+-         android:supportsRtl="true"
+--        android:theme="@style/AppTheme.NoActionBar">
+-+        android:theme="@style/AppTheme.NoActionBar"
+-+        android:networkSecurityConfig="@xml/network_security_config">
+-         <activity android:name=".Login"></activity>
+-         <activity android:name=".RegisterLogin" />
+-         <activity android:name=".Market3" />
+-Index: app/src/main/java/com/example/test/FragmentMenu2.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v4.app.Fragment;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\n/**\r\n * A simple {@link Fragment} subclass.\r\n * Use the {@link FragmentMenu2#newInstance} factory method to\r\n * create an instance of this fragment.\r\n *\r\n */\r\npublic class FragmentMenu2 extends Fragment {\r\n\r\n    // TODO: Rename parameter arguments, choose names that match\r\n    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\n    private static final String ARG_PARAM1 = \"param1\";\r\n    private static final String ARG_PARAM2 = \"param2\";\r\n\r\n    // TODO: Rename and change types of parameters\r\n    private String mParam1;\r\n    private String mParam2;\r\n\r\n    /**\r\n     * Use this factory method to create a new instance of\r\n     * this fragment using the provided parameters.\r\n     *\r\n     * @param param1 Parameter 1.\r\n     * @param param2 Parameter 2.\r\n     * @return A new instance of fragment FragmentMenu2.\r\n     */\r\n    // TODO: Rename and change types and number of parameters\r\n    public static FragmentMenu2 newInstance(String param1, String param2) {\r\n        FragmentMenu2 fragment = new FragmentMenu2();\r\n        Bundle args = new Bundle();\r\n        args.putString(ARG_PARAM1, param1);\r\n        args.putString(ARG_PARAM2, param2);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }\r\n\r\n    public FragmentMenu2() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        if (getArguments() != null) {\r\n            mParam1 = getArguments().getString(ARG_PARAM1);\r\n            mParam2 = getArguments().getString(ARG_PARAM2);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_menu2, container, false);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/FragmentMenu2.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/FragmentMenu2.java	(date 1606831698596)
+-@@ -1,11 +1,15 @@
+- package com.example.test;
+- 
+-+
+-+
+- import android.os.Bundle;
+--import android.support.v4.app.Fragment;
+-+
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- 
+-+import androidx.fragment.app.Fragment;
+-+
+- /**
+-  * A simple {@link Fragment} subclass.
+-  * Use the {@link FragmentMenu2#newInstance} factory method to
+-Index: app/src/main/java/com/example/test/Fragment2.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v7.app.AppCompatActivity;\r\n\r\npublic class Fragment2 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment2.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment2.java	(date 1606831698602)
+-@@ -1,7 +1,9 @@
+- package com.example.test;
+- 
+- import android.os.Bundle;
+--import android.support.v7.app.AppCompatActivity;
+-+
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- 
+- public class Fragment2 extends AppCompatActivity {
+- 
+-Index: app/src/main/java/com/example/test/FragmentMenu3.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.os.Bundle;\r\nimport android.support.v4.app.Fragment;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\n/**\r\n * A simple {@link Fragment} subclass.\r\n * Use the {@link FragmentMenu3#newInstance} factory method to\r\n * create an instance of this fragment.\r\n */\r\npublic class FragmentMenu3 extends Fragment {\r\n\r\n    // TODO: Rename parameter arguments, choose names that match\r\n    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\n    private static final String ARG_PARAM1 = \"param1\";\r\n    private static final String ARG_PARAM2 = \"param2\";\r\n\r\n    // TODO: Rename and change types of parameters\r\n    private String mParam1;\r\n    private String mParam2;\r\n\r\n    public FragmentMenu3() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    /**\r\n     * Use this factory method to create a new instance of\r\n     * this fragment using the provided parameters.\r\n     *\r\n     * @param param1 Parameter 1.\r\n     * @param param2 Parameter 2.\r\n     * @return A new instance of fragment FragmentMenu3.\r\n     */\r\n    // TODO: Rename and change types and number of parameters\r\n    public static FragmentMenu3 newInstance(String param1, String param2) {\r\n        FragmentMenu3 fragment = new FragmentMenu3();\r\n        Bundle args = new Bundle();\r\n        args.putString(ARG_PARAM1, param1);\r\n        args.putString(ARG_PARAM2, param2);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        if (getArguments() != null) {\r\n            mParam1 = getArguments().getString(ARG_PARAM1);\r\n            mParam2 = getArguments().getString(ARG_PARAM2);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_menu3, container, false);\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/FragmentMenu3.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/FragmentMenu3.java	(date 1606831698607)
+-@@ -1,11 +1,15 @@
+- package com.example.test;
+- 
+-+
+- import android.os.Bundle;
+--import android.support.v4.app.Fragment;
+-+
+- import android.view.LayoutInflater;
+- import android.view.View;
+- import android.view.ViewGroup;
+- 
+-+import androidx.fragment.app.Fragment;
+-+
+-+
+- /**
+-  * A simple {@link Fragment} subclass.
+-  * Use the {@link FragmentMenu3#newInstance} factory method to
+-Index: app/src/main/java/com/example/test/Fragment1.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\n\r\npublic class Fragment1 extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_fragment1);\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Fragment1.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Fragment1.java	(date 1606831698613)
+-@@ -1,8 +1,9 @@
+- package com.example.test;
+- 
+--import android.support.v7.app.AppCompatActivity;
+- import android.os.Bundle;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- public class Fragment1 extends AppCompatActivity {
+- 
+-     @Override
+-Index: app/src/main/res/layout/activity_register_login.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".RegisterLogin\">\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_name\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"200dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"이름\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_age\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"나이\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_name\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_name\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_name\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_id\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"24dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"아이디\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_age\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_age\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_age\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_pass\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"비밀번호\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_id\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_id\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_id\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_register\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:text=\"회원가입\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_pass\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_pass\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_pass\" />\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_register_login.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_register_login.xml	(date 1606831698618)
+-@@ -1,9 +1,10 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:app="http://schemas.android.com/apk/res-auto"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-     android:layout_height="match_parent"
+-+    android:orientation="vertical"
+-     tools:context=".RegisterLogin">
+- 
+-     <EditText
+-@@ -58,11 +59,11 @@
+- 
+-     <Button
+-         android:id="@+id/btn_register"
+--        android:layout_width="0dp"
+-+        android:layout_width="162dp"
+-         android:layout_height="wrap_content"
+-         android:layout_marginTop="16dp"
+-         android:text="회원가입"
+-         app:layout_constraintEnd_toEndOf="@+id/et_pass"
+-         app:layout_constraintStart_toStartOf="@+id/et_pass"
+-         app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/RegisterRequest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport com.android.volley.AuthFailureError;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.StringRequest;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic class RegisterRequest extends StringRequest {\r\n    //서버 url 설정(php 파일연동)\r\n    final static  private  String URL = \"http://whthakd.dothome.co.kr/Register.php\";\r\n    private Map<String, String> map;\r\n\r\n\r\n\r\n\r\n    public RegisterRequest(String userID, String userPassword, String userName, int userAge, Response.Listener<String> listener){\r\nsuper(Method.POST,URL,listener,null);\r\n\r\nmap = new HashMap();\r\nmap.put(\"userID\",userID);\r\n        map.put(\"userPassword\",userPassword);\r\n        map.put(\"userName\",userName);\r\n        map.put(\"userAge\",userAge+\"\");\r\n\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    protected Map<String, String> getParams() throws AuthFailureError {\r\n        return map;\r\n\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/RegisterRequest.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/RegisterRequest.java	(date 1606831698624)
+-@@ -9,7 +9,7 @@
+- 
+- public class RegisterRequest extends StringRequest {
+-     //서버 url 설정(php 파일연동)
+--    final static  private  String URL = "http://whthakd.dothome.co.kr/Register.php";
+-+    final static  private  String URL = "http://dhkfkr134.dothome.co.kr/Register.php";
+-     private Map<String, String> map;
+- 
+- 
+-Index: app/src/main/res/layout/activity_login.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Login\">\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_id\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"200dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"아이디\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"Name\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/et_pass\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"32dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:ems=\"10\"\r\n        android:hint=\"비밀번호\"\r\n        android:inputType=\"textPersonName\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_id\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_id\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_id\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_login\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"32dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:text=\"로그인\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/et_pass\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/et_pass\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/et_pass\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_register\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"8dp\"\r\n        android:layout_marginTop=\"32dp\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:text=\"회원가입\"\r\n        app:layout_constraintEnd_toEndOf=\"@+id/btn_login\"\r\n        app:layout_constraintStart_toStartOf=\"@+id/btn_login\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/btn_login\" />\r\n</android.support.constraint.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/res/layout/activity_login.xml	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/res/layout/activity_login.xml	(date 1606831698629)
+-@@ -1,9 +1,10 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:app="http://schemas.android.com/apk/res-auto"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-     android:layout_height="match_parent"
+-+    android:orientation="vertical"
+-     tools:context=".Login">
+- 
+-     <EditText
+-@@ -37,7 +38,7 @@
+- 
+-     <Button
+-         android:id="@+id/btn_login"
+--        android:layout_width="0dp"
+-+        android:layout_width="wrap_content"
+-         android:layout_height="wrap_content"
+-         android:layout_marginStart="8dp"
+-         android:layout_marginTop="32dp"
+-@@ -49,7 +50,7 @@
+- 
+-     <Button
+-         android:id="@+id/btn_register"
+--        android:layout_width="0dp"
+-+        android:layout_width="wrap_content"
+-         android:layout_height="wrap_content"
+-         android:layout_marginStart="8dp"
+-         android:layout_marginTop="32dp"
+-@@ -58,4 +59,4 @@
+-         app:layout_constraintEnd_toEndOf="@+id/btn_login"
+-         app:layout_constraintStart_toStartOf="@+id/btn_login"
+-         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+--</android.support.constraint.ConstraintLayout>
+-\ No newline at end of file
+-+</LinearLayout>
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/test/LoginRequest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport com.android.volley.AuthFailureError;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.StringRequest;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic class LoginRequest extends StringRequest {\r\n    //서버 url 설정(php 파일연동)\r\n    final static  private  String URL = \"http://whthakd.dothome.co.kr/Login.php\";\r\n    private Map<String, String> map;\r\n\r\n\r\n\r\n\r\n    public LoginRequest(String userID, String userPassword, Response.Listener<String> listener){\r\nsuper(Method.POST,URL,listener,null);\r\n\r\nmap = new HashMap();\r\nmap.put(\"userID\",userID);\r\n        map.put(\"userPassword\",userPassword);\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    protected Map<String, String> getParams() throws AuthFailureError {\r\n        return map;\r\n        \r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/LoginRequest.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/LoginRequest.java	(date 1606831698635)
+-@@ -9,7 +9,7 @@
+- 
+- public class LoginRequest extends StringRequest {
+-     //서버 url 설정(php 파일연동)
+--    final static  private  String URL = "http://whthakd.dothome.co.kr/Login.php";
+-+    final static  private  String URL = "http://dhkfkr134.dothome.co.kr/Login.php";
+-     private Map<String, String> map;
+- 
+- 
+-Index: app/src/main/java/com/example/test/Login.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.Toast;\r\n\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.Volley;\r\n\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\npublic class Login extends AppCompatActivity {\r\n    private EditText et_id,et_pass;\r\n    private Button btn_login,btn_register;\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n\r\n        et_id = findViewById(R.id.et_id);\r\n        et_pass = findViewById(R.id.et_pass);\r\n        btn_login = findViewById(R.id.btn_login);\r\n        btn_register = findViewById(R.id.btn_register);\r\n\r\n//회원가입 버튼을 클릭시 수행\r\n        btn_register.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(Login.this,RegisterLogin.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        btn_login.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n\r\n                String userID= et_id.getText().toString();\r\n                String userPass= et_pass.getText().toString();\r\n\r\n                Response.Listener<String> responseListener = new Response.Listener<String>() {\r\n                    @Override\r\n                    public void onResponse(String response) {\r\n                        try {\r\n                            JSONObject jsonObject = new JSONObject(response);\r\n                            boolean success = jsonObject.getBoolean(\"success\");\r\n                            if (success){//회원등록에 성공한 경우\r\n                                String userID= jsonObject.getString(\"userID\");\r\n                                String userPass= jsonObject.getString(\"userPassword\");\r\n                                Toast.makeText(getApplicationContext(),\"로그인에 성공.\",Toast.LENGTH_SHORT).show();\r\n                                Intent intent = new Intent(Login.this,MainActivity.class);\r\n                                intent.putExtra(\"userID\",userID);\r\n                                intent.putExtra(\"userPass\",userPass);\r\n                                startActivity(intent);\r\n                            }else{\r\n                                Toast.makeText(getApplicationContext(),\"로그인 실패.\",Toast.LENGTH_SHORT).show();\r\n                                return;\r\n                            }\r\n                        } catch (JSONException e) {\r\n                            e.printStackTrace();\r\n                        }\r\n\r\n                    }\r\n                };\r\n                LoginRequest loginRequest = new LoginRequest(userID,userPass,responseListener);\r\n                RequestQueue queue = Volley.newRequestQueue(Login.this);\r\n                queue.add(loginRequest);\r\n            }\r\n        });\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/Login.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/Login.java	(date 1606831698642)
+-@@ -1,13 +1,15 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+- import android.view.View;
+- import android.widget.Button;
+- import android.widget.EditText;
+- import android.widget.Toast;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- import com.android.volley.RequestQueue;
+- import com.android.volley.Response;
+- import com.android.volley.toolbox.Volley;
+-Index: app/src/main/java/com/example/test/RegisterLogin.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\nimport android.support.v7.app.AppCompatActivity;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.Toast;\r\n\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.toolbox.Volley;\r\n\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\npublic class RegisterLogin extends AppCompatActivity {\r\n\r\n\r\n    private EditText et_id,et_pass,et_name,et_age;\r\n    private Button btn_register;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_register_login);\r\n\r\n\r\n//아이디값찾아주기\r\n    et_id = findViewById(R.id.et_id);\r\n    et_pass = findViewById(R.id.et_pass);\r\n    et_name = findViewById(R.id.et_name);\r\n    et_age = findViewById(R.id.et_age);\r\n\r\n\r\n       //회원가입 버튼 클릭시 수행\r\n        btn_register = findViewById(R.id.btn_register);\r\n        btn_register.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n               //입력값을 가져온다\r\n\r\n                String userID= et_id.getText().toString();\r\n                String userPass= et_pass.getText().toString();\r\n                String userName= et_name.getText().toString();\r\n                int userAge= Integer.parseInt(et_age.getText().toString());\r\n\r\n                Response.Listener<String> responseListener = new Response.Listener<String>() {\r\n                    @Override\r\n                    public void onResponse(String response) {\r\n                        try {\r\n                            JSONObject jsonObject = new JSONObject(response);\r\n                            boolean success = jsonObject.getBoolean(\"success\");\r\n                            if (success){//회원등록에 성공한 경우\r\n                                Toast.makeText(getApplicationContext(),\"신선 회원가입을 축하드립니다.\",Toast.LENGTH_SHORT).show();\r\n                                Intent intent = new Intent(RegisterLogin.this,Login.class);\r\n                                startActivity(intent);\r\n                            }else{\r\n                                Toast.makeText(getApplicationContext(),\"회원가입 실패.\",Toast.LENGTH_SHORT).show();\r\n                                return;\r\n                            }\r\n                        } catch (JSONException e) {\r\n                            e.printStackTrace();\r\n                        }\r\n\r\n                    }\r\n                };\r\n\r\n               //서버로 volly를 이용해서 요청함\r\n                RegisterRequest registerRequest = new RegisterRequest(userID,userPass,userName,userAge,responseListener);\r\n                RequestQueue queue = Volley.newRequestQueue(RegisterLogin.this);\r\n                queue.add(registerRequest);\r\n\r\n\r\n\r\n\r\n            }\r\n        });\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/test/RegisterLogin.java	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/src/main/java/com/example/test/RegisterLogin.java	(date 1606831901649)
+-@@ -1,13 +1,16 @@
+- package com.example.test;
+- 
+- import android.content.Intent;
+--import android.support.v7.app.AppCompatActivity;
+-+
+- import android.os.Bundle;
+-+import android.util.Log;
+- import android.view.View;
+- import android.widget.Button;
+- import android.widget.EditText;
+- import android.widget.Toast;
+- 
+-+import androidx.appcompat.app.AppCompatActivity;
+-+
+- import com.android.volley.RequestQueue;
+- import com.android.volley.Response;
+- import com.android.volley.toolbox.Volley;
+-@@ -49,9 +52,11 @@
+-                     @Override
+-                     public void onResponse(String response) {
+-                         try {
+-+
+-                             JSONObject jsonObject = new JSONObject(response);
+-                             boolean success = jsonObject.getBoolean("success");
+-                             if (success){//회원등록에 성공한 경우
+-+
+-                                 Toast.makeText(getApplicationContext(),"신선 회원가입을 축하드립니다.",Toast.LENGTH_SHORT).show();
+-                                 Intent intent = new Intent(RegisterLogin.this,Login.class);
+-                                 startActivity(intent);
+-Index: gradle.properties
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+># Project-wide Gradle settings.\r\n# IDE (e.g. Android Studio) users:\r\n# Gradle settings configured through the IDE *will override*\r\n# any settings specified in this file.\r\n# For more details on how to configure your build environment visit\r\n# http://www.gradle.org/docs/current/userguide/build_environment.html\r\n# Specifies the JVM arguments used for the daemon process.\r\n# The setting is particularly useful for tweaking memory settings.\r\norg.gradle.jvmargs=-Xmx2048m\r\n# When configured, Gradle will run in incubating parallel mode.\r\n# This option should only be used with decoupled projects. More details, visit\r\n# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\r\n# org.gradle.parallel=true
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>x-windows-949
+-===================================================================
+---- gradle.properties	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ gradle.properties	(date 1606831698653)
+-@@ -6,6 +6,8 @@
+- # http://www.gradle.org/docs/current/userguide/build_environment.html
+- # Specifies the JVM arguments used for the daemon process.
+- # The setting is particularly useful for tweaking memory settings.
+-+android.enableJetifier=true
+-+android.useAndroidX=true
+- org.gradle.jvmargs=-Xmx2048m
+- # When configured, Gradle will run in incubating parallel mode.
+- # This option should only be used with decoupled projects. More details, visit
+-Index: app/build.gradle
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>apply plugin: 'com.android.application'\r\n\r\nandroid {\r\n    compileSdkVersion 30\r\n    buildToolsVersion \"30.0.2\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.test\"\r\n        minSdkVersion 26\r\n        targetSdkVersion 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"android.support.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation fileTree(dir: \"libs\", include: [\"*.jar\"])\r\n    implementation 'com.android.support:appcompat-v7:28.0.0'\r\n    implementation 'com.android.support.constraint:constraint-layout:1.1.3'\r\n    implementation 'com.android.support:design:28.0.0'\r\n    implementation 'com.android.support:support-v4:28.0.0'\r\n    implementation 'com.android.volley:volley:1.1.1'\r\n    testImplementation 'junit:junit:4.12'\r\n    androidTestImplementation 'com.android.support.test:runner:1.0.2'\r\n    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'\r\n\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/build.gradle	(revision 809501baba10783af2712b7e235a272436421e18)
+-+++ app/build.gradle	(date 1606831698658)
+-@@ -11,7 +11,7 @@
+-         versionCode 1
+-         versionName "1.0"
+- 
+--        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+-+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+-     }
+- 
+-     buildTypes {
+-@@ -24,13 +24,14 @@
+- 
+- dependencies {
+-     implementation fileTree(dir: "libs", include: ["*.jar"])
+--    implementation 'com.android.support:appcompat-v7:28.0.0'
+--    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+--    implementation 'com.android.support:design:28.0.0'
+--    implementation 'com.android.support:support-v4:28.0.0'
+-+    implementation 'androidx.appcompat:appcompat:1.0.0'
+-+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+-+    implementation 'com.google.android.material:material:1.0.0'
+-+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+-     implementation 'com.android.volley:volley:1.1.1'
+-+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+-     testImplementation 'junit:junit:4.12'
+--    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+--    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+-+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+-+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+- 
+- }
+-\ No newline at end of file

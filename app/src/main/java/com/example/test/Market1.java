@@ -2,19 +2,13 @@ package com.example.test;
 
 import android.content.Intent;
 
-import androidx.annotation.Nullable;
+
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ScrollView;
+
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -48,18 +42,23 @@ public class Market1 extends AppCompatActivity {
 
         vp.setAdapter(adapter); // adapter 전에 넣어놓기
 
-/*        TabLayout tab = findViewById(R.id.tab);
+        TabLayout tab = findViewById(R.id.tab);
         tab.setupWithViewPager(vp);
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentMenu1 fragment = (FragmentMenu1) fm.findFragmentById(R.id.viewpager);
 
-        ZoomImage zoomImage = new ZoomImage();
+/*        ZoomImage zoomImage = new ZoomImage();
         zoomImage.*/
 
 
     }
-
+//    public RecyclerView toFragment(){
+//        RecyclerView rv = findViewById(R.id.recycler_view);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager( this,3);
+//        rv.setLayoutManager(gridLayoutManager);
+//        return rv;
+//    }
     public void toHome(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);

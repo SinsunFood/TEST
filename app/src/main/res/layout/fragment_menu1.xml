@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+<!--
     <ScrollView
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
@@ -17,11 +18,12 @@
     android:fillViewport="true"
     android:gravity="center"
     android:orientation="vertical">
+-->
 
         <LinearLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -38,10 +40,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="420dp"!-->
 
-            <FrameLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="420dp">
-
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical">
+<!--
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:layout_width="144dp"
@@ -100,15 +104,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible"
-                    android:contentDescription="description_zoom_touch_close" />
-            </FrameLayout>
+                    android:contentDescription="description_zoom_touch_close" />-->
+            </androidx.recyclerview.widget.RecyclerView>
 
             <!--FrameLayout!-->
 
 
         </LinearLayout>
 
-    </ScrollView>
+<!--    </ScrollView>-->
 
     </LinearLayout>
 </FrameLayout>
