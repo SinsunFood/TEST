@@ -57,21 +57,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <TextView
-            android:text="총 가격 : "
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            >
-
-        </TextView>
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,9 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/orderBtn"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="#000000"
+            android:gravity="bottom"
             ></Button>
 
     </LinearLayout>

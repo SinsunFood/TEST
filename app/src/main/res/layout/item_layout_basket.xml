@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="80dp">
@@ -11,17 +10,25 @@
         android:layout_weight="75"
         android:orientation="vertical">
 
-
         <TextView
-            android:id="@+id/textMenu"
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="가게 이름"
+            android:layout_weight="60"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="#33aabb"
+            />
+        <TextView
+            android:id="@+id/textDate"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="메뉴"
             android:layout_weight="40"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
             />
         <TextView
             android:id="@+id/textCount"
@@ -31,52 +38,19 @@
             android:layout_weight="40"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
             />
-        <TextView
-            android:id="@+id/textCost"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:text="가격"
-            android:layout_weight="40"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            />
+
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/upButton"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:onClick="upButton"
-        app:srcCompat="@drawable/arrow_up" />
-
-    <ImageButton
-        android:id="@+id/downButton"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:onClick="downButton"
-        app:srcCompat="@drawable/arrow_down" />
-
     <Button
-        android:id="@+id/deleteButton"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="20"
-        android:onClick="onClick"
         android:text="삭제"
-        android:textColor="#000000"
-        android:textStyle="bold" />
-
+        android:layout_weight="20"
+        />
     <View
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="5"
         />
-
 </LinearLayout>
