@@ -1,6 +1,6 @@
 package com.example.test;
 
-public class Store1_menu {
+public class Store_menu {
 
     private String id;
     private String menuName;
