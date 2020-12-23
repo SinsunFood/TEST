@@ -59,17 +59,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp">
-
+        android:layout_height="50dp">
         <TextView
             android:text="합계 : "
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
+            android:gravity="center"
             android:textColor="#000000"
-            />
+           >
+
+        </TextView>
     </LinearLayout>
+        
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,9 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/orderBtn"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textColor="#000000"
+            android:gravity="center"
             ></Button>
 
     </LinearLayout>
