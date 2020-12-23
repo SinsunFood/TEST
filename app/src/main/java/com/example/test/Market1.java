@@ -8,14 +8,35 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
-
-import com.google.android.material.tabs.TabLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Market1 extends AppCompatActivity {
+
+
+    // 가게1의 메뉴정보를 담음
+    final ArrayList<Store_menu> store1MenuArrayList = new ArrayList<>();
+    private static final String TAG = "MAIN";
+    private TextView tv;
+    Button orderButton;
+    private RequestQueue queue;
 
 
     @Override
@@ -45,14 +66,97 @@ public class Market1 extends AppCompatActivity {
         TabLayout tab = findViewById(R.id.tab);
         tab.setupWithViewPager(vp);
 
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentMenu1 fragment = (FragmentMenu1) fm.findFragmentById(R.id.viewpager);
+        // 철순꺼 메뉴정보불러오기
+        final Gson gson = new Gson();
 
-/*        ZoomImage zoomImage = new ZoomImage();
-        zoomImage.*/
+        tv = findViewById(R.id.tvMain); // 디버깅용
+        queue = Volley.newRequestQueue(this);
+        String url = "http://whthakd.dothome.co.kr/get_Store1MenuData.php";
+
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // get으로 DB에서 매장 메뉴 정보들 불러와서 메뉴Array에 저장
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    JsonObject jsonObject = (JsonObject) jsonParser.parse(response); //json 전체 파싱
+                    JsonArray jsonArray = jsonObject.getAsJsonArray("STORE_MENU");
+
+                    for (int i = 0; i < jsonArray.size(); i++) {
+                        JsonElement jsonElement = jsonArray.get(i);
+                        Store_menu store_menu = gson.fromJson(jsonElement.toString(), Store_menu.class);
+                        store1MenuArrayList.add(i, store_menu);
+                    }
+                    tv.setText(store1MenuArrayList.get(0).getMenuName() + "\n");
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    tv.setText("error" + "\n");
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+        stringRequest.setTag(TAG);
+        queue.add(stringRequest); // 매장 메뉴 정보 불러옴
 
 
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////
+        // volley post - 주문정보 보내기
+        orderButton = findViewById(R.id.order_button);
+        String postUrl = "http://whthakd.dothome.co.kr/OrderInfo.php";
+        final StringRequest postStringRequest = new StringRequest(Request.Method.POST, postUrl , new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("menuName", store1MenuArrayList.get(0).getMenuName());
+                params.put("price", String.valueOf(store1MenuArrayList.get(0).getPrice()));
+
+                return params;
+            }
+        };
+        postStringRequest.setTag(TAG);
+
+        // order 버튼 클릭 시 주문 내역 php로 전송
+        orderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                queue.add(postStringRequest);
+            }
+        });
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (queue != null) {
+            queue.cancelAll(TAG);
+        }
+    }
+
+    FragmentManager fm = getSupportFragmentManager();
+    FragmentMenu1 fragment = (FragmentMenu1) fm.findFragmentById(R.id.viewpager);
+
+    /*        ZoomImage zoomImage = new ZoomImage();
+            zoomImage.*/
+
 //    public RecyclerView toFragment(){
 //        RecyclerView rv = findViewById(R.id.recycler_view);
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager( this,3);
@@ -63,4 +167,5 @@ public class Market1 extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
+
 }

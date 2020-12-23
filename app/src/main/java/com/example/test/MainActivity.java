@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void toHome(View view){
-        // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
+    public void toHome(View view){ // 홈화면에서 홈버튼 누르면 화면 맨위로 이동
         mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
 
@@ -59,5 +58,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), AlramPage.class);
         startActivity(intent);
     }
+
+
+    public void toCart(View view){ // 홈화면에서 장바구니로 이동
+        //Intent intent = new Intent(getApplicationContext(), .class);
+        //startActivity(intent);
+    }
+
+    public void toLogin(View view){
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        startActivity(intent);
+    }
+
 
 }

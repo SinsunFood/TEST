@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 
 import com.example.test.dummy.DummyContent;
 
+import androidx.fragment.app.Fragment;
+
 /**
  * A fragment representing a list of Items.
  */

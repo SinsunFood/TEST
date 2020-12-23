@@ -1,0 +1,71 @@
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Thu Oct 01 14:04:31 KST 2020\r\ndistributionBase=GRADLE_USER_HOME\r\ndistributionPath=wrapper/dists\r\nzipStoreBase=GRADLE_USER_HOME\r\nzipStorePath=wrapper/dists\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-6.1.1-all.zip\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>x-windows-949
+===================================================================
+--- gradle/wrapper/gradle-wrapper.properties	(revision 809501baba10783af2712b7e235a272436421e18)
++++ gradle/wrapper/gradle-wrapper.properties	(date 1606834060928)
+@@ -1,6 +1,6 @@
+-#Thu Oct 01 14:04:31 KST 2020
++#Tue Dec 01 23:42:54 KST 2020
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nbuildscript {\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n    }\r\n    dependencies {\r\n        classpath \"com.android.tools.build:gradle:4.0.1\"\r\n\r\n        // NOTE: Do not place your application dependencies here; they belong\r\n        // in the individual module build.gradle files\r\n    }\r\n}\r\n\r\nallprojects {\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n    }\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build.gradle	(revision 809501baba10783af2712b7e235a272436421e18)
++++ build.gradle	(date 1606834080880)
+@@ -5,7 +5,7 @@
+         jcenter()
+     }
+     dependencies {
+-        classpath "com.android.tools.build:gradle:4.0.1"
++        classpath 'com.android.tools.build:gradle:4.1.1'
+ 
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+Index: app/src/test/java/com/example/test/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.test;\r\n\r\nimport org.junit.Test;\r\n\r\nimport static org.junit.Assert.*;\r\n\r\n/**\r\n * Example local unit test, which will execute on the development machine (host).\r\n *\r\n * @see <a href=\"http://d.android.com/tools/testing\">Testing documentation</a>\r\n */\r\npublic class ExampleUnitTest {\r\n    @Test\r\n    public void addition_isCorrect() {\r\n        assertEquals(4, 2 + 2);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/test/java/com/example/test/ExampleUnitTest.java	(revision 809501baba10783af2712b7e235a272436421e18)
++++ app/src/test/java/com/example/test/ExampleUnitTest.java	(date 1606834080905)
+@@ -1,6 +1,6 @@
+ package com.example.test;
+ 
+-import org.junit.Test;
++import org.junit.jupiter.api.Test;
+ 
+ import static org.junit.Assert.*;
+ 
+Index: app/src/androidTest/java/com/example/test/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.test;\r\n\r\nimport android.content.Context;\r\nimport android.support.test.InstrumentationRegistry;\r\nimport android.support.test.runner.AndroidJUnit4;\r\n\r\nimport org.junit.Test;\r\nimport org.junit.runner.RunWith;\r\n\r\nimport static org.junit.Assert.*;\r\n\r\n/**\r\n * Instrumented test, which will execute on an Android device.\r\n *\r\n * @see <a href=\"http://d.android.com/tools/testing\">Testing documentation</a>\r\n */\r\n@RunWith(AndroidJUnit4.class)\r\npublic class ExampleInstrumentedTest {\r\n    @Test\r\n    public void useAppContext() {\r\n        // Context of the app under test.\r\n        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();\r\n        assertEquals(\"com.example.test\", appContext.getPackageName());\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/androidTest/java/com/example/test/ExampleInstrumentedTest.java	(revision 809501baba10783af2712b7e235a272436421e18)
++++ app/src/androidTest/java/com/example/test/ExampleInstrumentedTest.java	(date 1606834080932)
+@@ -4,7 +4,7 @@
+ import android.support.test.InstrumentationRegistry;
+ import android.support.test.runner.AndroidJUnit4;
+ 
+-import org.junit.Test;
++import org.junit.jupiter.api.Test;
+ import org.junit.runner.RunWith;
+ 
+ import static org.junit.Assert.*;

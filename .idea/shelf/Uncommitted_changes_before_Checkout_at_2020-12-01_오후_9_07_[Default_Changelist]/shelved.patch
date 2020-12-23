@@ -1,0 +1,22 @@
+Index: app/src/main/java/com/example/test/Market1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.test;\r\n\r\nimport android.content.Intent;\r\n\r\nimport androidx.annotation.Nullable;\r\nimport androidx.fragment.app.FragmentManager;\r\nimport androidx.viewpager.widget.ViewPager;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.view.inputmethod.EditorInfo;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageButton;\r\nimport android.widget.ImageView;\r\nimport android.widget.ScrollView;\r\n\r\nimport com.google.android.material.tabs.TabLayout;\r\n\r\nimport java.util.ArrayList;\r\n\r\n\r\npublic class Market1 extends AppCompatActivity {\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_market1);\r\n\r\n        //정원이꺼 map뷰\r\n        ViewPager mapVp = findViewById(R.id.mapview);\r\n        VPAdapter mapAdapter = new VPAdapter(getSupportFragmentManager());\r\n        mapAdapter.items.add(new MapsFragment());\r\n        mapVp.setAdapter(mapAdapter);\r\n\r\n        //시우꺼 슬라이드뷰\r\n        ViewPager vp = findViewById(R.id.viewpager);\r\n        VPAdapter adapter = new VPAdapter(getSupportFragmentManager());\r\n        adapter.items.add(new FragmentMenu1());\r\n        adapter.items.add(new FragmentMenu2());\r\n        adapter.items.add(new FragmentMenu3());\r\n        adapter.itext.add(\"메뉴\");\r\n        adapter.itext.add(\"리뷰\");\r\n        adapter.itext.add(\"매장정보\");\r\n\r\n\r\n        vp.setAdapter(adapter); // adapter 전에 넣어놓기\r\n\r\n/*        TabLayout tab = findViewById(R.id.tab);\r\n        tab.setupWithViewPager(vp);\r\n\r\n        FragmentManager fm = getSupportFragmentManager();\r\n        FragmentMenu1 fragment = (FragmentMenu1) fm.findFragmentById(R.id.viewpager);\r\n\r\n        ZoomImage zoomImage = new ZoomImage();\r\n        zoomImage.*/\r\n\r\n\r\n    }\r\n\r\n    public void toHome(View view) {\r\n        Intent intent = new Intent(getApplicationContext(), MainActivity.class);\r\n        startActivity(intent);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/test/Market1.java	(revision 234d0370ac437fc13ff2557b35f82bd4d21f00fb)
++++ app/src/main/java/com/example/test/Market1.java	(date 1605708404905)
+@@ -48,10 +48,10 @@
+ 
+         vp.setAdapter(adapter); // adapter 전에 넣어놓기
+ 
+-/*        TabLayout tab = findViewById(R.id.tab);
++        TabLayout tab = findViewById(R.id.tab);
+         tab.setupWithViewPager(vp);
+ 
+-        FragmentManager fm = getSupportFragmentManager();
++/*        FragmentManager fm = getSupportFragmentManager();
+         FragmentMenu1 fragment = (FragmentMenu1) fm.findFragmentById(R.id.viewpager);
+ 
+         ZoomImage zoomImage = new ZoomImage();
