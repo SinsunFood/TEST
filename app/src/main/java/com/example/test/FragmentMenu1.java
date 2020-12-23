@@ -2,20 +2,13 @@ package com.example.test;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.test.dummy.DummyContent;
-
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * A fragment representing a list of Items.
@@ -74,7 +67,7 @@ public class FragmentMenu1 extends Fragment {
             }
             recyclerView.setAdapter(adapter);
 
-            adapter.setItems(new DataRead().getItems());
+            //adapter.setItems(new DataRead().getItems());
 
         }
         return view;

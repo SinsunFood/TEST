@@ -1,50 +1,57 @@
 package com.example.test;
 
-import javax.xml.namespace.QName;
-
 public class Menu {
-    private int image;
-    private String type;
-    private String name;
-    private String content;
+    private String id;
+    private String menuName;
+    private int price;
+    private int grams;
+    private String image;
 
-    public Menu(int image, String type, String name, String content) {
+    public Menu(String id, String menuName, int price, int grams, String image) {
+        this.id = id;
+        this.menuName = menuName;
+        this.price = price;
+        this.grams = grams;
         this.image = image;
-        this.type = type;
-        this.name = name;
-        this.content = content;
-
     }
 
-    public int getImage() {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMenuName() {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getGrams() {
+        return grams;
+    }
+
+    public void setGrams(int grams) {
+        this.grams = grams;
+    }
+
+    public String getImage() {
         return image;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 }

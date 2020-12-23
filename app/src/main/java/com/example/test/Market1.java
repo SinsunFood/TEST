@@ -1,15 +1,15 @@
 package com.example.test;
 
 import android.content.Intent;
-
-
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -32,7 +33,7 @@ public class Market1 extends AppCompatActivity {
 
 
     // 가게1의 메뉴정보를 담음
-    final ArrayList<Store_menu> store1MenuArrayList = new ArrayList<>();
+    final ArrayList<Menu> menuArrayList = new ArrayList<>();
     private static final String TAG = "MAIN";
     private TextView tv;
     Button orderButton;
@@ -66,6 +67,7 @@ public class Market1 extends AppCompatActivity {
         TabLayout tab = findViewById(R.id.tab);
         tab.setupWithViewPager(vp);
 
+
         // 철순꺼 메뉴정보불러오기
         final Gson gson = new Gson();
 
@@ -84,16 +86,15 @@ public class Market1 extends AppCompatActivity {
 
                     for (int i = 0; i < jsonArray.size(); i++) {
                         JsonElement jsonElement = jsonArray.get(i);
-                        Store_menu store_menu = gson.fromJson(jsonElement.toString(), Store_menu.class);
-                        store1MenuArrayList.add(i, store_menu);
+                        Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
+                        menuArrayList.add(i, menu); // 메뉴 리스트 저장
                     }
-                    tv.setText(store1MenuArrayList.get(0).getMenuName() + "\n");
+                    tv.setText(menuArrayList.get(0).getImage() + "\n");
 
                 } catch (Exception e) {
                     e.printStackTrace();
                     tv.setText("error" + "\n");
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -102,9 +103,6 @@ public class Market1 extends AppCompatActivity {
         });
         stringRequest.setTag(TAG);
         queue.add(stringRequest); // 매장 메뉴 정보 불러옴
-
-
-
 
 
         /////////////////////////////////////////////////////////////////////////////////
@@ -126,8 +124,8 @@ public class Market1 extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
 
-                params.put("menuName", store1MenuArrayList.get(0).getMenuName());
-                params.put("price", String.valueOf(store1MenuArrayList.get(0).getPrice()));
+                params.put("menuName", menuArrayList.get(0).getMenuName());
+                params.put("price", String.valueOf(menuArrayList.get(0).getPrice()));
 
                 return params;
             }
@@ -150,6 +148,7 @@ public class Market1 extends AppCompatActivity {
             queue.cancelAll(TAG);
         }
     }
+    /////////////////////////////////////////////////////////////////
 
     FragmentManager fm = getSupportFragmentManager();
     FragmentMenu1 fragment = (FragmentMenu1) fm.findFragmentById(R.id.viewpager);

@@ -1,6 +1,5 @@
 package com.example.test;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -36,10 +33,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 //                .into(viewHolder.ivMenu);
 //      구현부
 
-        viewHolder.ivMenu.setImageResource(item.getImage());
-        viewHolder.tvName.setText(item.getName());
-        viewHolder.tvContent.setText(item.getContent());
-        viewHolder.tvType.setText(item.getType());
+
 
 //        리스트를 클릭했을때 동작구현부
 //        viewHolder.itemView.setTag(position);
