@@ -1,11 +1,8 @@
 package com.example.test;
 
-import android.content.Context;
 import android.content.Intent;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -64,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void toCart(View view){ // 홈화면에서 장바구니로 이동
-        Intent intent = new Intent(getApplicationContext(), SendData.class);
-        startActivity(intent);
+        //Intent intent = new Intent(getApplicationContext(), .class);
+        //startActivity(intent);
     }
 
     public void toLogin(View view){
