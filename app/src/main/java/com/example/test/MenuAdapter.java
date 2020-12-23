@@ -34,8 +34,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 //        Glide.with(viewHolder.itemView.getContext())
 //                .load(item.getImage())
 //                .into(viewHolder.ivMenu);
-
 //      구현부
+
         viewHolder.ivMenu.setImageResource(item.getImage());
         viewHolder.tvName.setText(item.getName());
         viewHolder.tvContent.setText(item.getContent());

@@ -30,6 +30,7 @@ public class FragmentMenu1 extends Fragment {
      * fragment (e.g. upon screen orientation changes).
      */
     public FragmentMenu1() {
+
     }
 
     // TODO: Customize parameter initialization
