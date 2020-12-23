@@ -56,38 +56,60 @@ public class Login extends AppCompatActivity {
         profileImage = findViewById(R.id.profile);
 
 
-        Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
-            @Override
-            public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
-                if (oAuthToken != null) {
-                    // TBD
-                }
-                if (throwable != null) {
-                    // TBD
-                    Log.w(TAG, "invoke: " + throwable.getLocalizedMessage());
-                }
-               Login.this.updateKakaoLoginUi();
-                return null;
-            }
-        };
 
-        loginButton.setOnClickListener(view -> {
-            if (LoginClient.getInstance().isKakaoTalkLoginAvailable(Login.this)) {
-                LoginClient.getInstance().loginWithKakaoTalk(Login.this, callback);
-            } else {
-                LoginClient.getInstance().loginWithKakaoAccount(Login.this, callback);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+
+           public void onClick(View view){
+               if (LoginClient.getInstance().isKakaoTalkLoginAvailable(Login.this)) {
+                   LoginClient.getInstance().loginWithKakaoTalk(Login.this, new Function2<OAuthToken, Throwable, Unit>() {
+                       @Override
+                       public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
+                          if(oAuthToken!=null){
+
+                          }
+                           if (throwable != null){
+
+                           }
+                           updateKakaoLoginUi();
+                           return null;
+                       }
+                   });
+               } else {
+                   LoginClient.getInstance().loginWithKakaoAccount(Login.this, new Function2<OAuthToken, Throwable, Unit>() {
+                       @Override
+                       public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
+                           if(oAuthToken!=null){
+
+                           }
+                           if (throwable != null){
+
+                           }
+                           updateKakaoLoginUi();
+                           return null;
+                       }
+                   });
+               }
+           }
+
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view){
+                UserApiClient.getInstance().logout(new Function1<Throwable, Unit>() {
+                    @Override
+                    public Unit invoke(Throwable throwable) {
+                        updateKakaoLoginUi();
+                        return null;
+                    }
+                });
+
             }
         });
 
-        logoutButton.setOnClickListener(view -> UserApiClient.getInstance().logout(new Function1<Throwable, Unit>() {
-            @Override
-            public Unit invoke(Throwable throwable) {
-                updateKakaoLoginUi();
-                return null;
-            }
-        }));
 
-        updateKakaoLoginUi();}
+        updateKakaoLoginUi();
+    }
 
         private void updateKakaoLoginUi() {
             UserApiClient.getInstance().me(new Function2<User, Throwable, Unit>() {
@@ -103,11 +125,13 @@ public class Login extends AppCompatActivity {
                         Glide.with(profileImage).load(user.getKakaoAccount().getProfile().getThumbnailImageUrl()).circleCrop().into(profileImage);
                         loginButton.setVisibility(View.GONE);
                         logoutButton.setVisibility(View.VISIBLE);
+
                     } else {
                        nickName.setText(null);
                         profileImage.setImageBitmap(null);
                         loginButton.setVisibility(View.VISIBLE);
                         logoutButton.setVisibility(View.GONE);
+
                     }
                     if (throwable != null) {
                         Log.w(TAG, "invoke: " + throwable.getLocalizedMessage());
@@ -115,7 +139,8 @@ public class Login extends AppCompatActivity {
                     return null;
                 }
             });
-        }}
+        }
+}
 
 
 
