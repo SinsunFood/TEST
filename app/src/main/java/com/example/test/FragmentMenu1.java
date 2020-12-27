@@ -67,7 +67,7 @@ public class FragmentMenu1 extends Fragment {
             }
             recyclerView.setAdapter(adapter);
 
-            //adapter.setItems(new DataRead().getItems());
+            adapter.setItems(new GetMarket1Menu().getItems());
 
         }
         return view;
