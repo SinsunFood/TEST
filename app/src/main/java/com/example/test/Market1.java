@@ -2,6 +2,7 @@ package com.example.test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -89,7 +90,8 @@ public class Market1 extends AppCompatActivity {
                         Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
                         menuArrayList.add(i, menu); // 메뉴 리스트 저장
                     }
-                    tv.setText(menuArrayList.get(0).getImage() + "\n");
+                    for(Object object : menuArrayList) Log.d("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n",String.valueOf(object));
+                    tv.setText(menuArrayList.get(2).getId()+menuArrayList.get(2).getMenuName() +menuArrayList.get(2).getPrice()+menuArrayList.get(2).getGrams()+menuArrayList.get(2).getImage() + "\n");
 
                 } catch (Exception e) {
                     e.printStackTrace();

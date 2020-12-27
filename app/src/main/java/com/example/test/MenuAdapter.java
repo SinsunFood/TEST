@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
@@ -28,11 +30,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         Menu item = items.get(position);
 
 //        url로 이미지 받는방법
-//        Glide.with(viewHolder.itemView.getContext())
-//                .load(item.getImage())
-//                .into(viewHolder.ivMenu);
+        Glide.with(viewHolder.itemView.getContext())
+                .load(item.getImage())
+                .into(viewHolder.ivMenu);
 //      구현부
 
+        viewHolder.tvName.setText(item.getMenuName());
+        viewHolder.tvContent.setText(String.valueOf(item.getPrice()));
+        viewHolder.tvType.setText(String.valueOf(item.getGrams()));
 
 
 //        리스트를 클릭했을때 동작구현부

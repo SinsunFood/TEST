@@ -54,4 +54,8 @@ public class Menu {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String toString(){
+        return "id :"+ id+" menuName"+ menuName + " price" +price + " grams" + grams + "image" + image;
+    }
 }
