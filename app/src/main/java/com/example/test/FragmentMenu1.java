@@ -36,6 +36,7 @@ public class FragmentMenu1 extends Fragment {
 
     private RequestQueue queue;
     final ArrayList<Menu> items = new ArrayList<>();
+    private static final String TAG = "GetMenu1";
 
 
     /**
@@ -113,6 +114,7 @@ public class FragmentMenu1 extends Fragment {
                 public void onErrorResponse(VolleyError error) {
                 }
             });
+            stringRequest.setTag(TAG);
             queue.add(stringRequest); // 매장 메뉴 정보 불러옴
 
 
@@ -120,5 +122,12 @@ public class FragmentMenu1 extends Fragment {
 
         }
         return view;
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (queue != null) {
+            queue.cancelAll(TAG);
+        }
     }
 }

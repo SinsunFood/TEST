@@ -69,43 +69,6 @@ public class Market1 extends AppCompatActivity {
         tab.setupWithViewPager(vp);
 
 
-        // 철순꺼 메뉴정보불러오기
-        final Gson gson = new Gson();
-
-        tv = findViewById(R.id.tvMain); // 디버깅용
-        queue = Volley.newRequestQueue(this);
-        String url = "http://whthakd.dothome.co.kr/get_Store1MenuData.php";
-
-        final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                // get으로 DB에서 매장 메뉴 정보들 불러와서 메뉴Array에 저장
-                try {
-                    JsonParser jsonParser = new JsonParser();
-                    JsonObject jsonObject = (JsonObject) jsonParser.parse(response); //json 전체 파싱
-                    JsonArray jsonArray = jsonObject.getAsJsonArray("STORE_MENU");
-
-                    for (int i = 0; i < jsonArray.size(); i++) {
-                        JsonElement jsonElement = jsonArray.get(i);
-                        Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
-                        menuArrayList.add(i, menu); // 메뉴 리스트 저장
-                    }
-                    for(Object object : menuArrayList) Log.d("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n",String.valueOf(object));
-                    tv.setText(menuArrayList.get(2).getId()+menuArrayList.get(2).getMenuName() +menuArrayList.get(2).getPrice()+menuArrayList.get(2).getGrams()+menuArrayList.get(2).getImage() + "\n");
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    tv.setText("error" + "\n");
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-            }
-        });
-        stringRequest.setTag(TAG);
-        queue.add(stringRequest); // 매장 메뉴 정보 불러옴
-
 
         /////////////////////////////////////////////////////////////////////////////////
         // volley post - 주문정보 보내기
