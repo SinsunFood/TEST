@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.kakao.sdk.auth.LoginClient;
 import com.kakao.sdk.auth.model.OAuthToken;
+import com.kakao.sdk.common.util.Utility;
 import com.kakao.sdk.user.UserApiClient;
 import com.kakao.sdk.user.model.User;
 
@@ -54,6 +55,8 @@ public class Login extends AppCompatActivity {
         logoutButton = findViewById(R.id.logout);
         nickName = findViewById(R.id.nickname);
         profileImage = findViewById(R.id.profile);
+        String keyHash = Utility.INSTANCE.getKeyHash(this);
+        Log.i(TAG, "onCreate: keyHash:" + keyHash);
 
 
 
@@ -75,6 +78,7 @@ public class Login extends AppCompatActivity {
                        }
                    });
                } else {
+
                    LoginClient.getInstance().loginWithKakaoAccount(Login.this, new Function2<OAuthToken, Throwable, Unit>() {
                        @Override
                        public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
@@ -89,6 +93,9 @@ public class Login extends AppCompatActivity {
                        }
                    });
                }
+
+
+
            }
 
         });
@@ -123,6 +130,7 @@ public class Login extends AppCompatActivity {
                         Log.i(TAG, "invoke: age=" + user.getKakaoAccount().getAgeRange());
                        nickName.setText(user.getKakaoAccount().getProfile().getNickname());
                         Glide.with(profileImage).load(user.getKakaoAccount().getProfile().getThumbnailImageUrl()).circleCrop().into(profileImage);
+
                         loginButton.setVisibility(View.GONE);
                         logoutButton.setVisibility(View.VISIBLE);
 
