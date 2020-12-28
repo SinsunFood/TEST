@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,12 +29,12 @@ public class ListAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return m_oData.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -50,10 +51,16 @@ public class ListAdapter extends BaseAdapter {
         TextView oTextDate = (TextView) convertView.findViewById(R.id.textDate);
         TextView oTextCount = (TextView) convertView.findViewById(R.id.textCount);
         TextView oTextCost = (TextView) convertView.findViewById(R.id.textCost);
+        Button oBtn = (Button) convertView.findViewById(R.id.deleteButton);
 
         oTextDate.setText(m_oData.get(position).strDate);
         oTextCount.setText(m_oData.get(position).strCount);
         oTextCost.setText(m_oData.get(position).strCost);
+        oBtn.setOnClickListener(m_oData.get(position).onClickListener);
+
+
+        convertView.setTag(""+position);
         return convertView;
     }
+
 }
