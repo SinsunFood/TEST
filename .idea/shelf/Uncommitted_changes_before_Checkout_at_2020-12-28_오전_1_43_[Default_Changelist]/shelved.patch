@@ -1,0 +1,92 @@
+Index: app/src/main/java/com/example/test/FragmentMenu1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.test;\r\n\r\nimport android.content.Context;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.recyclerview.widget.GridLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\n/**\r\n * A fragment representing a list of Items.\r\n */\r\npublic class FragmentMenu1 extends Fragment {\r\n\r\n    // TODO: Customize parameter argument names\r\n    private static final String ARG_COLUMN_COUNT = \"column-count\";\r\n    // TODO: Customize parameters\r\n    private int mColumnCount = 1;\r\n\r\n    /**\r\n     * Mandatory empty constructor for the fragment manager to instantiate the\r\n     * fragment (e.g. upon screen orientation changes).\r\n     */\r\n    public FragmentMenu1() {\r\n\r\n    }\r\n\r\n    // TODO: Customize parameter initialization\r\n    @SuppressWarnings(\"unused\")\r\n    public static FragmentMenu1 newInstance(int columnCount) {\r\n        FragmentMenu1 fragment = new FragmentMenu1();\r\n        Bundle args = new Bundle();\r\n        args.putInt(ARG_COLUMN_COUNT, columnCount);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n\r\n        if (getArguments() != null) {\r\n            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        View view = inflater.inflate(R.layout.fragment_item_list, container, false);\r\n        MenuAdapter adapter = new MenuAdapter();\r\n\r\n        // Set the adapter\r\n        if (view instanceof RecyclerView) {\r\n\r\n            Context context = view.getContext();\r\n            RecyclerView recyclerView = (RecyclerView) view;\r\n            if (mColumnCount <= 1) {\r\n                recyclerView.setLayoutManager(new GridLayoutManager(context,3));\r\n\r\n            } else {\r\n                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));\r\n\r\n            }\r\n            recyclerView.setAdapter(adapter);\r\n\r\n            adapter.setItems(new GetMarket1Menu().getItems());\r\n\r\n        }\r\n        return view;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/test/FragmentMenu1.java	(revision 160cef7f4ee03905e8093024f6aba17f4b6d3ed4)
++++ app/src/main/java/com/example/test/FragmentMenu1.java	(date 1609087146818)
+@@ -10,6 +10,20 @@
+ import androidx.recyclerview.widget.GridLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
+ 
++import com.android.volley.Request;
++import com.android.volley.RequestQueue;
++import com.android.volley.Response;
++import com.android.volley.VolleyError;
++import com.android.volley.toolbox.StringRequest;
++import com.android.volley.toolbox.Volley;
++import com.google.gson.Gson;
++import com.google.gson.JsonArray;
++import com.google.gson.JsonElement;
++import com.google.gson.JsonObject;
++import com.google.gson.JsonParser;
++
++import java.util.ArrayList;
++
+ /**
+  * A fragment representing a list of Items.
+  */
+@@ -20,6 +34,11 @@
+     // TODO: Customize parameters
+     private int mColumnCount = 1;
+ 
++    private static final String TAG = "getMenu1";
++    private RequestQueue queue;
++    final ArrayList<Menu> items = new ArrayList<>();
++
++
+     /**
+      * Mandatory empty constructor for the fragment manager to instantiate the
+      * fragment (e.g. upon screen orientation changes).
+@@ -66,10 +85,42 @@
+ 
+             }
+             recyclerView.setAdapter(adapter);
++            //////////////////////////////////////////////
++            // string request
++            final Gson gson = new Gson();
++            queue = Volley.newRequestQueue(this.getContext());
++            String url = "http://whthakd.dothome.co.kr/get_Store1MenuData.php";
++            final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
++                @Override
++                public void onResponse(String response) {
++                    // get으로 DB에서 매장 메뉴 정보들 불러와서 메뉴Array에 저장
++                    try {
++                        JsonParser jsonParser = new JsonParser();
++                        JsonObject jsonObject = (JsonObject) jsonParser.parse(response); //json 전체 파싱
++                        JsonArray jsonArray = jsonObject.getAsJsonArray("STORE_MENU");
+ 
+-            adapter.setItems(new GetMarket1Menu().getItems());
++                        for (int i = 0; i < jsonArray.size(); i++) {
++                            JsonElement jsonElement = jsonArray.get(i);
++                            Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
++                            items.add(i, menu); // 메뉴 리스트 저장
++                        }
+ 
++                    } catch (Exception e) {
++                        e.printStackTrace();
++                    }
++                }
++            }, new Response.ErrorListener() {
++                @Override
++                public void onErrorResponse(VolleyError error) {
++                }
++            });
++            stringRequest.setTag(TAG);
++            queue.add(stringRequest); // 매장 메뉴 정보 불러옴
++
++            adapter.setItems(items);
+         }
+         return view;
++
+     }
++
+ }
+\ No newline at end of file
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__10_50__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__10_50__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__4_37__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__4_37__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__11_48__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__11_48__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__10_46__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__10_46__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__9_07__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_2020-12-01__9_07__Default_Changelist_.xml

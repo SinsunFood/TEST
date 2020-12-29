@@ -29,10 +29,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         mScrollview = findViewById(R.id.scrollView);
 
-
-
-
-
     }
 
     public void toMarket1(View view){ // 반찬가게 1로 바꿈
@@ -59,16 +55,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    public void toCart(View view){ // 홈화면에서 장바구니로 이동
-        //Intent intent = new Intent(getApplicationContext(), .class);
-        //startActivity(intent);
-    }
-
     public void toLogin(View view){
         Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
     }
 
+    public void toBasket(View view){
+        Intent intent = new Intent(getApplicationContext(), Basket.class);
+        startActivity(intent);
+    }
 
 }
