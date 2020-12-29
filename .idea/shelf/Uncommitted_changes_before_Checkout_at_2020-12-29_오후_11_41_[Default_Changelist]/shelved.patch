@@ -1,0 +1,45 @@
+Index: app/src/main/res/layout/activity_market1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Market1\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#D0DD97\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/imageView11\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            app:srcCompat=\"@drawable/header_logo\" />\r\n\r\n    </LinearLayout>\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"This is text.\"\r\n        android:id=\"@+id/tvMain\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" >\r\n\r\n    </TextView>\r\n\r\n    <Button\r\n        android:id=\"@+id/order_button\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"order\">\r\n\r\n    </Button>\r\n\r\n    <ScrollView\r\n        android:id=\"@+id/scrollView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"600dp\"\r\n        android:layout_marginTop=\"0dp\"\r\n        android:fillViewport=\"true\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <androidx.viewpager.widget.ViewPager\r\n                android:id=\"@+id/mapview\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"200dp\" />\r\n\r\n            <com.google.android.material.tabs.TabLayout\r\n                android:id=\"@+id/tab\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\"\r\n\r\n                app:tabIndicatorColor=\"@android:color/black\"\r\n                app:tabSelectedTextColor=\"@color/cardview_dark_background\">\r\n\r\n                <com.google.android.material.tabs.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"메뉴\" />\r\n\r\n                <com.google.android.material.tabs.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"리뷰\" />\r\n\r\n                <com.google.android.material.tabs.TabItem\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"50dp\"\r\n                    android:text=\"매장정보\" />\r\n            </com.google.android.material.tabs.TabLayout>\r\n\r\n            <androidx.viewpager.widget.ViewPager\r\n                android:id=\"@+id/viewpager\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\" />\r\n        </LinearLayout>\r\n    </ScrollView>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_gravity=\"bottom\"\r\n        >\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_home\"\r\n            android:onClick=\"toHome\"\r\n            android:text=\"홈\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_shopping_cart\"\r\n            android:text=\"장바구니\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_notifications\"\r\n            android:text=\"알림\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:background=\"@android:color/background_light\"\r\n            android:drawableTop=\"@drawable/botton_main_myinfo\"\r\n            android:text=\"내정보\" />\r\n    </LinearLayout>\r\n\r\n</LinearLayout>\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_market1.xml	(revision 52a276321e63241bd7c9c9784d1f5bf8fd539a2a)
++++ app/src/main/res/layout/activity_market1.xml	(date 1609168710798)
+@@ -22,14 +22,14 @@
+     </LinearLayout>
+ 
+     <TextView
++        android:id="@+id/tvMain"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="This is text."
+-        android:id="@+id/tvMain"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" >
++        app:layout_constraintTop_toTopOf="parent">
+ 
+     </TextView>
+ 
+@@ -52,7 +52,7 @@
+ 
+         <LinearLayout
+             android:layout_width="match_parent"
+-            android:layout_height="match_parent"
++            android:layout_height="wrap_content"
+             android:orientation="vertical">
+ 
+             <androidx.viewpager.widget.ViewPager
+@@ -94,8 +94,7 @@
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:layout_gravity="bottom"
+-        >
++        android:layout_gravity="bottom">
+ 
+         <Button
+             android:id="@+id/btn_1"

@@ -1,0 +1,94 @@
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\" defaultCharsetForPropertiesFiles=\"x-windows-949\">\r\n    <file url=\"PROJECT\" charset=\"x-windows-949\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(revision 8e35007d3809a11a7d04602450fb6366a67c08ff)
++++ .idea/encodings.xml	(date 1609081785923)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="Encoding" defaultCharsetForPropertiesFiles="x-windows-949">
+-    <file url="PROJECT" charset="x-windows-949" />
++    <file url="PROJECT" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/test/getMarket1Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/test/getMarket1Menu.java	(date 1609085908859)
++++ app/src/main/java/com/example/test/getMarket1Menu.java	(date 1609085908859)
+@@ -0,0 +1,68 @@
++package com.example.test;
++
++import android.content.Context;
++import android.graphics.Bitmap;
++
++import androidx.collection.LruCache;
++
++import com.android.volley.Request;
++import com.android.volley.RequestQueue;
++import com.android.volley.toolbox.ImageLoader;
++import com.android.volley.toolbox.Volley;
++
++import java.util.ArrayList;
++
++public class getMarket1Menu {
++    private static getMarket1Menu instance;
++    private RequestQueue requestQueue;
++    final ArrayList<Menu> menuArrayList = new ArrayList<>();
++    private static Context ctx;
++
++    private getMarket1Menu(Context context) {
++        ctx = context;
++        requestQueue = getRequestQueue();
++
++        items = new ImageLoader(requestQueue,
++                new ImageLoader.ImageCache() {
++                    private final LruCache<String, Bitmap>
++                            cache = new LruCache<String, Bitmap>(20);
++
++                    @Override
++                    public Bitmap getBitmap(String url) {
++                        return cache.get(url);
++                    }
++
++                    @Override
++                    public void putBitmap(String url, Bitmap bitmap) {
++                        cache.put(url, bitmap);
++                    }
++                });
++    }
++
++    public static synchronized getMarket1Menu getInstance(Context context) {
++        if (instance == null) {
++            instance = new getMarket1Menu(context);
++        }
++        return instance;
++    }
++
++    public RequestQueue getRequestQueue() {
++        if (requestQueue == null) {
++            // getApplicationContext() is key, it keeps you from leaking the
++            // Activity or BroadcastReceiver if someone passes one in.
++            requestQueue = Volley.newRequestQueue(ctx.getApplicationContext());
++        }
++        return requestQueue;
++    }
++
++    public <T> void addToRequestQueue(Request<T> req) {
++        getRequestQueue().add(req);
++    }
++
++    public ImageLoader getImageLoader() {
++        return imageLoader;
++    }
++}
++
++
++
