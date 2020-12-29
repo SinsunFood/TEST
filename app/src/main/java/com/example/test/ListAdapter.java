@@ -48,12 +48,12 @@ public class ListAdapter extends BaseAdapter {
         }
 
 
-        TextView oTextDate = (TextView) convertView.findViewById(R.id.textDate);
+        TextView oTextDate = (TextView) convertView.findViewById(R.id.textMenu);
         TextView oTextCount = (TextView) convertView.findViewById(R.id.textCount);
         TextView oTextCost = (TextView) convertView.findViewById(R.id.textCost);
         Button oBtn = (Button) convertView.findViewById(R.id.deleteButton);
 
-        oTextDate.setText(m_oData.get(position).strDate);
+        oTextDate.setText(m_oData.get(position).strMenu);
         oTextCount.setText(m_oData.get(position).strCount);
         oTextCost.setText(m_oData.get(position).strCost);
         oBtn.setOnClickListener(m_oData.get(position).onClickListener);
