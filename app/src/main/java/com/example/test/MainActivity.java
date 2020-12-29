@@ -62,4 +62,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
     }
+    public void toPay(View view) {
+        Intent intent = new Intent(getApplicationContext(), pay.class);
+        startActivity(intent);
+    }
 }

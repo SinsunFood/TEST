@@ -145,6 +145,7 @@
             android:layout_weight="1"
             android:background="@android:color/background_light"
             android:drawableTop="@drawable/botton_main_notifications"
+            android:onClick="toPay"
             android:text="알림"
             />
 
