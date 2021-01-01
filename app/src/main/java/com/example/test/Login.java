@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
         nickName = findViewById(R.id.nickname);
         profileImage = findViewById(R.id.profile);
         String keyHash = Utility.INSTANCE.getKeyHash(this);
-        Log.i(TAG, "onCreate: keyHash:" + keyHash);
+        Log.i(TAG, "onCreate: keyHash" + keyHash);
 
 
 
