@@ -8,4 +8,20 @@ public class ItemDataBastket {
     public String strCount; // 주문 수량
     public String strCost; // 가격
     public View.OnClickListener onClickListener;
+
+    public String getStrCount() {
+        return strCount;
+    }
+
+    public void setStrCount(String strCount) {
+        this.strCount = strCount;
+    }
+
+    public String getStrCost() {
+        return strCost;
+    }
+
+    public void setStrCost(String strCost) {
+        this.strCost = strCost;
+    }
 }

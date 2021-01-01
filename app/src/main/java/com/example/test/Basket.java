@@ -78,7 +78,16 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
         String position = (String) oParentView.getTag();
         int index = Integer.parseInt(position);
 
+        String strC = oData.get(index).getStrCount();
+        int intC = Integer.parseInt(strC);
+        intC++;
+        strC = Integer.toString(intC);
+        oData.get(index).setStrCount(strC);
 
+        m_oListView = (ListView)findViewById(R.id.listView);
+        ListAdapter oAdapter = new ListAdapter(oData);
+        m_oListView.setAdapter(oAdapter);
+        mScrollview = findViewById(R.id.scrollView);
     }
 
     public void downButton(View view){
