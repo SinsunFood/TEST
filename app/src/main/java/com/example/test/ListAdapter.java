@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,12 +30,12 @@ public class ListAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return m_oData.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -46,12 +48,23 @@ public class ListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_layout_basket, parent, false);
         }
 
+        TextView oTextDate = (TextView) convertView.findViewById(R.id.textMenu);
+        TextView oTextCount = (TextView) convertView.findViewById(R.id.textCount);
+        TextView oTextCost = (TextView) convertView.findViewById(R.id.textCost);
+        Button oBtn = (Button) convertView.findViewById(R.id.deleteButton);
+        ImageButton upBtn = (ImageButton) convertView.findViewById(R.id.upButton);
+        ImageButton downBtn = (ImageButton) convertView.findViewById(R.id.downButton);
 
-        TextView oTextTitle = (TextView) convertView.findViewById(R.id.textTitle);
-        TextView oTextDate = (TextView) convertView.findViewById(R.id.textDate);
+        oTextDate.setText(m_oData.get(position).strMenu);
+        oTextCount.setText(m_oData.get(position).strCount);
+        oTextCost.setText(m_oData.get(position).strCost);
+        oBtn.setOnClickListener(m_oData.get(position).onClickListener1);
+        upBtn.setOnClickListener(m_oData.get(position).onClickListener2);
+        downBtn.setOnClickListener(m_oData.get(position).onClickListener3);
 
-        oTextTitle.setText(m_oData.get(position).strTitle);
-        oTextDate.setText(m_oData.get(position).strDate);
+        convertView.setTag(""+position);
         return convertView;
+
     }
+
 }
