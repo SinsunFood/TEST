@@ -37,7 +37,7 @@ public class FragmentMenu1 extends Fragment {
     private RequestQueue queue;
     final ArrayList<Menu> items = new ArrayList<>();
     private static final String TAG = "GetMenu1";
-
+    MenuAdapter adapter = new MenuAdapter();
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -64,13 +64,44 @@ public class FragmentMenu1 extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+        //////////////////////////////////////////////
+        // string request
+        final Gson gson = new Gson();
+        queue = Volley.newRequestQueue(this.getContext());
+        String url = "http://whthakd.dothome.co.kr/get_Store1MenuData.php";
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // get으로 DB에서 매장 메뉴 정보들 불러와서 메뉴Array에 저장
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    JsonObject jsonObject = (JsonObject) jsonParser.parse(response); //json 전체 파싱
+                    JsonArray jsonArray = jsonObject.getAsJsonArray("STORE_MENU");
+
+                    for (int i = 0; i < jsonArray.size(); i++) {
+                        JsonElement jsonElement = jsonArray.get(i);
+                        Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
+                        items.add(i, menu); // 메뉴 리스트 저장
+                    }
+                    adapter.setItems(items);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+        stringRequest.setTag(TAG);
+        queue.add(stringRequest); // 매장 메뉴 정보 불러옴
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
-        MenuAdapter adapter = new MenuAdapter();
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -85,40 +116,7 @@ public class FragmentMenu1 extends Fragment {
 
             }
             recyclerView.setAdapter(adapter);
-            //////////////////////////////////////////////
-            // string request
-            final Gson gson = new Gson();
-            queue = Volley.newRequestQueue(this.getContext());
-            String url = "http://whthakd.dothome.co.kr/get_Store1MenuData.php";
-            final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    // get으로 DB에서 매장 메뉴 정보들 불러와서 메뉴Array에 저장
-                    try {
-                        JsonParser jsonParser = new JsonParser();
-                        JsonObject jsonObject = (JsonObject) jsonParser.parse(response); //json 전체 파싱
-                        JsonArray jsonArray = jsonObject.getAsJsonArray("STORE_MENU");
 
-                        for (int i = 0; i < jsonArray.size(); i++) {
-                            JsonElement jsonElement = jsonArray.get(i);
-                            Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
-                            items.add(i, menu); // 메뉴 리스트 저장
-                        }
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                }
-            });
-            stringRequest.setTag(TAG);
-            queue.add(stringRequest); // 매장 메뉴 정보 불러옴
-
-
-            adapter.setItems(items);
 
         }
         return view;
