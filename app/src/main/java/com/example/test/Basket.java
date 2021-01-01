@@ -21,19 +21,19 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
     // 일단 데이터 생성 , 여기 데이터를 가게마다 따로 받아야 함 힘듦
     //가게의 메뉴를 입력받는 데이터
     String[] strDate = {"제육볶음", "묵은지", "콩자반", "파래무침", "감자조림", "파김치"};
-    int nDatCnt=0;
+    int nDatCnt = 0;
     ArrayList<ItemDataBastket> oData = new ArrayList<>(); // CustomList의 목록
-    boolean del = false;
+    int arrayCnt = 0;
+    int totalCost = 0;
 
-
-
+    TextView text;
     // 장바구니 리스트 출력하는 함수 나중에 서버에서 가져와서 출력하는걸로 바꿔야함
     private void print(){
-        for (int i=0; i<6; ++i)
+        for (arrayCnt=0; arrayCnt<6; ++arrayCnt)
         {
             ItemDataBastket oItem = new ItemDataBastket();
             oItem.strMenu = strDate[nDatCnt++];
-            oItem.intCount = (i+1);
+            oItem.intCount = (arrayCnt+1);
             oItem.strToIntCount(oItem.intCount);
             oItem.intCost = oItem.intCount * 1000;
             oItem.strToIntCost(oItem.intCost);
@@ -45,6 +45,16 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
         }
     }
 
+    public void sumCost(){
+        totalCost = 0; // 호출 할 때마다 0으로 리셋
+        text = (TextView)findViewById(R.id.totalCost);
+        for(int i = 0; i < arrayCnt; i++)
+        {
+            totalCost += oData.get(i).getIntCost();
+        }
+        String sCost = "가격 : " + Integer.toString(totalCost) + "원";
+        text.setText(sCost);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +64,7 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
         // 장바구니 리스트 한 번 출력;
         print();
 
+        sumCost();
 
 // ListViewBasket, ListAdapter 생성 및 연결
         m_oListView = (ListView)findViewById(R.id.listView);
@@ -71,6 +82,8 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
             int index = Integer.parseInt(position);
 
             oData.remove(index);
+            arrayCnt--;
+            sumCost();
 
             m_oListView = (ListView) findViewById(R.id.listView);
             ListAdapter oAdapter = new ListAdapter(oData);
@@ -90,6 +103,7 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
             iCost++;
             oData.get(index).setIntCost(iCost);
             oData.get(index).strToIntCost(iCost);
+            sumCost();
 
             m_oListView = (ListView)findViewById(R.id.listView);
             ListAdapter oAdapter = new ListAdapter(oData);
@@ -102,6 +116,8 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
 
             if(oData.get(index).getIntCount() == 1){
                 oData.remove(index);
+                arrayCnt--;
+                sumCost();
 
                 m_oListView = (ListView) findViewById(R.id.listView);
                 ListAdapter oAdapter = new ListAdapter(oData);
@@ -117,6 +133,7 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
                 iCost--;
                 oData.get(index).setIntCost(iCost);
                 oData.get(index).strToIntCost(iCost);
+                sumCost();
 
                 m_oListView = (ListView) findViewById(R.id.listView);
                 ListAdapter oAdapter = new ListAdapter(oData);
@@ -136,4 +153,5 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
         // 맨위로 이동
         mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
+
 }
