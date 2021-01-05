@@ -22,8 +22,6 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
     // 가게1에서 보낸 메뉴들
     // 받을때
 
-
-
     // 일단 데이터 생성 , 여기 데이터를 가게마다 따로 받아야 함 힘듦
     //가게의 메뉴를 입력받는 데이터
     String[] strDate = {"제육볶음", "묵은지", "콩자반", "파래무침", "감자조림", "파김치"};
