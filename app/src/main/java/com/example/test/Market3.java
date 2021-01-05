@@ -8,6 +8,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Market3 extends AppCompatActivity {
 
     @Override

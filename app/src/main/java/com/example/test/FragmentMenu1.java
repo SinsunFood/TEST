@@ -2,18 +2,27 @@ package com.example.test;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.test.dummy.DummyContent;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.util.ArrayList;
 
 /**
  * A fragment representing a list of Items.
@@ -24,6 +33,12 @@ public class FragmentMenu1 extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
+
+    private RequestQueue queue;
+    final ArrayList<Menu> items = new ArrayList<>();
+    private static final String TAG = "GetMenu1";
+
+    MenuAdapter adapter = new MenuAdapter();
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -47,6 +62,40 @@ public class FragmentMenu1 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //////////////////////////////////////////////
+        // string request
+        final Gson gson = new Gson();
+        queue = Volley.newRequestQueue(this.getContext());
+        String url = "http://whthakd.dothome.co.kr/get_Store1MenuData.php";
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // get으로 DB에서 매장 메뉴 정보들 불러와서 메뉴Array에 저장
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    JsonObject jsonObject = (JsonObject) jsonParser.parse(response); //json 전체 파싱
+                    JsonArray jsonArray = jsonObject.getAsJsonArray("STORE_MENU");
+
+                    for (int i = 0; i < jsonArray.size(); i++) {
+                        JsonElement jsonElement = jsonArray.get(i);
+                        Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
+                        items.add(i, menu); // 메뉴 리스트 저장
+                    }
+                    adapter.setItems(items);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+        stringRequest.setTag(TAG);
+        queue.add(stringRequest); // 매장 메뉴 정보 불러옴
+
+
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -56,7 +105,7 @@ public class FragmentMenu1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
-        MenuAdapter adapter = new MenuAdapter();
+        MenuAdapter subAdapter = adapter;
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -70,11 +119,53 @@ public class FragmentMenu1 extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 
             }
-            recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(subAdapter);
+            /*
+            //////////////////////////////////////////////
+            // string request
+            final Gson gson = new Gson();
+            queue = Volley.newRequestQueue(this.getContext());
+            String url = "http://whthakd.dothome.co.kr/get_Store1MenuData.php";
+            final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    // get으로 DB에서 매장 메뉴 정보들 불러와서 메뉴Array에 저장
+                    try {
+                        JsonParser jsonParser = new JsonParser();
+                        JsonObject jsonObject = (JsonObject) jsonParser.parse(response); //json 전체 파싱
+                        JsonArray jsonArray = jsonObject.getAsJsonArray("STORE_MENU");
 
-            adapter.setItems(new DataRead().getItems());
+                        for (int i = 0; i < jsonArray.size(); i++) {
+                            JsonElement jsonElement = jsonArray.get(i);
+                            Menu menu = gson.fromJson(jsonElement.toString(), Menu.class);
+                            items.add(i, menu); // 메뉴 리스트 저장
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
+            });
+            stringRequest.setTag(TAG);
+            queue.add(stringRequest); // 매장 메뉴 정보 불러옴
+
+
+            adapter.setItems(items);
+
+             */
 
         }
         return view;
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (queue != null) {
+            queue.cancelAll(TAG);
+        }
     }
 }
