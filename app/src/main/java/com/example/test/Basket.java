@@ -148,4 +148,8 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
     public void toBasket(View view){
         mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
+
+    public void order(View view){ // 주문 추가
+
+    }
 }
