@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,10 +28,12 @@ import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 
-public class Market1 extends AppCompatActivity {
+public class Market1 extends AppCompatActivity implements FragmentMenu1.OnMyListener {
 
 
     // 가게1의 메뉴정보를 담음
@@ -39,7 +42,7 @@ public class Market1 extends AppCompatActivity {
     private TextView tv;
     Button orderButton;
     private RequestQueue queue;
-
+    Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,13 @@ public class Market1 extends AppCompatActivity {
 
         TabLayout tab = findViewById(R.id.tab);
         tab.setupWithViewPager(vp);
+
+/*        Menu menu = new Menu("100","100",100,100,"100");
+        Intent intent = new Intent(this,Market2.class);
+
+        intent.putExtra("person", menu);
+
+        startActivity(intent);*/
 
 
 
@@ -121,7 +131,7 @@ public class Market1 extends AppCompatActivity {
     /*        ZoomImage zoomImage = new ZoomImage();
             zoomImage.*/
 
-//    public RecyclerView toFragment(){
+    //    public RecyclerView toFragment(){
 //        RecyclerView rv = findViewById(R.id.recycler_view);
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager( this,3);
 //        rv.setLayoutManager(gridLayoutManager);
@@ -132,4 +142,18 @@ public class Market1 extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onReceivedData(Object data,int mclickCount) {
+        SharedPreferences pref= getSharedPreferences("pref", 0); // SharedPreferences 사용 선언
+        SharedPreferences.Editor editor = pref.edit(); // deitor선언
+        menu= (Menu)data;
+        mclickCount++;
+        String count = Integer.toString(mclickCount);
+        editor.putString("id"+count,menu.getId());
+        editor.putString("menuname"+count,menu.getMenuName());
+        editor.putInt("price"+count,menu.getPrice());
+        editor.putString("count"+count,count);
+        editor.commit();
+
+    }
 }

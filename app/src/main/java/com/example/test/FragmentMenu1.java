@@ -29,6 +29,13 @@ import java.util.ArrayList;
  */
 public class FragmentMenu1 extends Fragment {
 
+    //콜백을 위한거
+    public interface OnMyListener{
+        void onReceivedData(Object data, int mclickCount);
+    }
+    private OnMyListener mOnMyListener;
+
+
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
@@ -120,6 +127,16 @@ public class FragmentMenu1 extends Fragment {
 
             }
             recyclerView.setAdapter(adapter);
+            adapter.setItems(items);
+            adapter.setOnItemClickListener(new MenuAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View v, int position,Menu item,int mclickCount) {
+                    if(mOnMyListener!=null)
+                    {
+                        mOnMyListener.onReceivedData(item,mclickCount);
+                    }
+                }
+            });
             /*
             //////////////////////////////////////////////
             // string request

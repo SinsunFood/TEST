@@ -4,7 +4,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,12 +30,11 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
 
     TextView text;
     // 장바구니 리스트 출력하는 함수 나중에 서버에서 가져와서 출력하는걸로 바꿔야함
-    private void print(){
-        for (arrayCnt=0; arrayCnt<6; ++arrayCnt)
-        {
+    private void print() {
+        for (arrayCnt = 0; arrayCnt < 6; ++arrayCnt) {
             ItemDataBastket oItem = new ItemDataBastket();
             oItem.strMenu = strDate[nDatCnt++];
-            oItem.intCount = (arrayCnt+1);
+            oItem.intCount = (arrayCnt + 1);
             oItem.strToIntCount(oItem.intCount);
             oItem.intCost = oItem.intCount * 1000;
             oItem.strToIntCost(oItem.intCost);
@@ -42,6 +43,20 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
             oItem.onClickListener3 = this;
             oData.add(oItem);
             if (nDatCnt >= strDate.length) nDatCnt = 0; //로테이션 돌리려고 하는 if문
+        }
+        SharedPreferences pref;
+        pref = getSharedPreferences("pref", MODE_PRIVATE);
+
+        if (pref.getInt("price", 0) > 0) {
+            Log.d("tag1", "prefTest2");
+            ItemDataBastket oItem = new ItemDataBastket();
+            oItem.strMenu = pref.getString("menuname", null);
+            oItem.strCount = "1";
+            oItem.strCost = Integer.toString(pref.getInt("price", 0));
+            oItem.onClickListener1 = this;
+            oItem.onClickListener2 = this;
+            oItem.onClickListener3 = this;
+            oData.add(oItem);
         }
     }
 
