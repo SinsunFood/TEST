@@ -14,6 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Basket extends AppCompatActivity implements View.OnClickListener{
 
@@ -54,11 +55,6 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
         Log.d("tag1",scount);
         for(int i=1;i<icount+1; i++) {
             int check =0;
-            for(int j=0;j<i-1;j++){
-                if(oData.get(j).getStrMenu().compareTo(pref.getString("menuname"+Integer.toString(i),null)) == 0){ // 같은메뉴 있다면 check는 양수
-                    check ++;
-                }
-            }
             if (check==0) {
                 ItemDataBastket oItem = new ItemDataBastket();
 
@@ -67,8 +63,18 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
                 oItem.strCost = Integer.toString(pref.getInt("price" + Integer.toString(i), 0)) + "원";
                 oItem.onClickListener = this;
                 oData.add(oItem);
+
+            }
+
+        }
+        for(int i=0;i<icount-1;i++){
+            for(int j=1;j<icount;j++){
+                if(oData.get(i)==oData.get(j)){
+                    oData.remove(j);
+                }
             }
         }
+
     }
 
 
