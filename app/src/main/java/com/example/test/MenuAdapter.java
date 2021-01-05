@@ -1,16 +1,22 @@
 package com.example.test;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
@@ -64,13 +70,50 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         ImageView ivMenu;
         TextView tvName, tvContent, tvType;
 
-        ViewHolder(View itemView) {
+        Button button;
+        TextView testText;
+
+        ViewHolder(final View itemView) {
             super(itemView);
 
             ivMenu = itemView.findViewById(R.id.iv_item_menu);
             tvName = itemView.findViewById(R.id.tv_item_menu_name);
             tvContent = itemView.findViewById(R.id.tv_item_menu_content);
             tvType = itemView.findViewById(R.id.tv_item_menu_type);
+
+            testText = itemView.findViewById(R.id.tv_basket);
+            button = itemView.findViewById(R.id.button_goToBasket);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    int position = getAdapterPosition();
+                     /*
+                    String menuName = items.get(position).getMenuName();
+                    String menuPrice = String.valueOf(items.get(position).getPrice());
+
+
+                    basket.setStrMenu(menuName);
+                    basket.setStrCost(menuPrice);
+                    basket.setStrCount("1");
+
+                     */
+
+                    Intent intent = new Intent();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("menu", items.get(position));
+                    intent.putExtras(bundle);
+
+                    String str = String.valueOf(position);
+
+                    //testText.setText(basketArrayList.get(position).getStrMenu());
+
+                    // 줄때
+
+                }
+            });
+
         }
     }
 

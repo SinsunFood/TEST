@@ -119,7 +119,7 @@ public class FragmentMenu1 extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 
             }
-            recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(subAdapter);
             /*
             //////////////////////////////////////////////
             // string request

@@ -1,6 +1,9 @@
 package com.example.test;
 
-public class Menu {
+import java.io.Serializable;
+
+public class Menu implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String id;
     private String menuName;
     private int price;

@@ -56,8 +56,35 @@
                 android:text="Menu Content"
                 android:textColor="@android:color/white"/>
 
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            >
+            <Button
+                android:id="@+id/button_goToBasket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="장바구니 담기"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_basket"
+                android:text="adadadadad"
+                />
+
         </LinearLayout>
 
 
+
+
+
     </androidx.cardview.widget.CardView>
+
 </FrameLayout>
