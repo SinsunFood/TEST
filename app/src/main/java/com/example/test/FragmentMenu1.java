@@ -1,10 +1,12 @@
 package com.example.test;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -29,6 +31,11 @@ import java.util.ArrayList;
  */
 public class FragmentMenu1 extends Fragment {
 
+    //콜백을 위한거
+    public interface OnMyListener{
+        void onReceivedData(Object data,int mclickCount);
+    }
+    private OnMyListener mOnMyListener;
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
@@ -70,7 +77,7 @@ public class FragmentMenu1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
-        MenuAdapter adapter = new MenuAdapter();
+        final MenuAdapter adapter = new MenuAdapter();
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -119,9 +126,26 @@ public class FragmentMenu1 extends Fragment {
 
 
             adapter.setItems(items);
+            adapter.setOnItemClickListener(new MenuAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View v, int position,Menu item,int mclickCount) {
+                    if(mOnMyListener!=null)
+                    {
+                        mOnMyListener.onReceivedData(item,mclickCount);
+                    }
+                }
+            });
 
         }
         return view;
+    }
+
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        if(getActivity()!=null&&getActivity() instanceof  OnMyListener){
+            mOnMyListener = (OnMyListener) getActivity();
+        }
     }
     @Override
     public void onStop() {

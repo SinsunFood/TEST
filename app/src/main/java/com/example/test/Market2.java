@@ -3,6 +3,8 @@ package com.example.test;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -38,7 +40,6 @@ public class Market2 extends AppCompatActivity {
 
         TabLayout tab = findViewById(R.id.tab);
         tab.setupWithViewPager(vp);
-
     }
     public void toHome(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

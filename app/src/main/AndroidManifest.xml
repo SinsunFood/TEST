@@ -44,7 +44,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Market3" />
+        <activity android:name=".Basket"/>
         <activity android:name=".Market2" />
         <activity android:name=".recyclerActivity" />
         <activity android:name=".Login" />

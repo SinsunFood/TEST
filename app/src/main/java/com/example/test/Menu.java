@@ -1,6 +1,9 @@
 package com.example.test;
 
+import java.io.Serializable;
+
 public class Menu {
+
     private String id;
     private String menuName;
     private int price;

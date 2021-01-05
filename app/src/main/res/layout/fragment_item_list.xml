@@ -10,4 +10,5 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".FragmentMenu1"
-    tools:listitem="@layout/menu_list" />
+    tools:listitem="@layout/menu_list">
+</androidx.recyclerview.widget.RecyclerView>

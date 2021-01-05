@@ -3,6 +3,7 @@ package com.example.test;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,16 @@ import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     private ArrayList<Menu> items = new ArrayList<>();
+    public Menu sellectedItem;
+    private int mclickCount = 0;
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position, Menu item,int mclickCount) ;
+    }
+    private OnItemClickListener mListener = null ;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener ;
+    }
 
     @NonNull
     @Override
@@ -63,6 +74,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 
         ImageView ivMenu;
         TextView tvName, tvContent, tvType;
+        Button click_btn;
+        TextView tv_test;
+        int mtest = 0;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -71,6 +85,25 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
             tvName = itemView.findViewById(R.id.tv_item_menu_name);
             tvContent = itemView.findViewById(R.id.tv_item_menu_content);
             tvType = itemView.findViewById(R.id.tv_item_menu_type);
+
+            click_btn = itemView.findViewById(R.id.click_Btn);
+
+            click_btn.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION){
+                        if(mListener != null)
+                        {
+                            sellectedItem = items.get(pos);
+                            mclickCount++;
+                            mListener.onItemClick(v,pos,sellectedItem,mclickCount);
+
+                        }
+                    }
+
+                }
+            });
         }
     }
 

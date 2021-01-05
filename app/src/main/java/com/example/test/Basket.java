@@ -4,7 +4,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -18,6 +20,7 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
     ScrollView mScrollview;
     private ListView m_oListView = null;
 
+
     // 일단 데이터 생성 , 여기 데이터를 가게마다 따로 받아야 함 힘듦
     //가게의 메뉴를 입력받는 데이터
     String[] strDate = {"제육볶음", "묵은지", "콩자반", "파래무침", "감자조림", "파김치"};
@@ -29,6 +32,7 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
 
     // 장바구니 리스트 출력하는 함수 나중에 서버에서 가져와서 출력하는걸로 바꿔야함
     private void print(){
+/*
         for (int i=0; i<6; ++i)
         {
             ItemDataBastket oItem = new ItemDataBastket();
@@ -38,6 +42,32 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
             oItem.onClickListener = this;
             oData.add(oItem);
             if (nDatCnt >= strDate.length) nDatCnt = 0; //로테이션 돌리려고 하는 if문
+        }
+*/
+
+        //test
+        SharedPreferences pref;
+        pref = getSharedPreferences("pref", MODE_PRIVATE);
+
+        String scount = pref.getString("count",null);
+        int icount = Integer.parseInt(scount);
+        Log.d("tag1",scount);
+        for(int i=1;i<icount+1; i++) {
+            int check =0;
+            for(int j=0;j<i-1;j++){
+                if(oData.get(j).getStrMenu().compareTo(pref.getString("menuname"+Integer.toString(i),null)) == 0){ // 같은메뉴 있다면 check는 양수
+                    check ++;
+                }
+            }
+            if (check==0) {
+                ItemDataBastket oItem = new ItemDataBastket();
+
+                oItem.strMenu = pref.getString("menuname" + Integer.toString(i), null);
+                oItem.strCount =  Integer.toString(i)+"개";
+                oItem.strCost = Integer.toString(pref.getInt("price" + Integer.toString(i), 0)) + "원";
+                oItem.onClickListener = this;
+                oData.add(oItem);
+            }
         }
     }
 
