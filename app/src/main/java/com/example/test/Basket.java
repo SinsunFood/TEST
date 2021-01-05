@@ -27,23 +27,6 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
     int totalCost = 0;
 
     TextView text;
-    // 장바구니 리스트 출력하는 함수 나중에 서버에서 가져와서 출력하는걸로 바꿔야함
-    private void print(){
-        for (arrayCnt=0; arrayCnt<6; ++arrayCnt)
-        {
-            ItemDataBastket oItem = new ItemDataBastket();
-            oItem.strMenu = strDate[nDatCnt++];
-            oItem.intCount = (arrayCnt+1);
-            oItem.strToIntCount(oItem.intCount);
-            oItem.intCost = oItem.intCount * 1000;
-            oItem.strToIntCost(oItem.intCost);
-            oItem.onClickListener1 = this;
-            oItem.onClickListener2 = this;
-            oItem.onClickListener3 = this;
-            oData.add(oItem);
-            if (nDatCnt >= strDate.length) nDatCnt = 0; //로테이션 돌리려고 하는 if문
-        }
-    }
 
     public void sumCost(){
         totalCost = 0; // 호출 할 때마다 0으로 리셋
@@ -61,8 +44,21 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basket);
 
-        // 장바구니 리스트 한 번 출력;
-        print();
+        // 장바구니 리스트 한 번 출력 , 임시로 사용중임
+        for (arrayCnt=0; arrayCnt<6; ++arrayCnt)
+        {
+            ItemDataBastket oItem = new ItemDataBastket();
+            oItem.strMenu = strDate[nDatCnt++];
+            oItem.intCount = (arrayCnt+1);
+            oItem.strToIntCount(oItem.intCount);
+            oItem.intCost = oItem.intCount * 1000;
+            oItem.strToIntCost(oItem.intCost);
+            oItem.onClickListener1 = this;
+            oItem.onClickListener2 = this;
+            oItem.onClickListener3 = this;
+            oData.add(oItem);
+            if (nDatCnt >= strDate.length) nDatCnt = 0; //로테이션 돌리려고 하는 if문
+        }
 
         sumCost();
 
@@ -150,8 +146,6 @@ public class Basket extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void toBasket(View view){
-        // 맨위로 이동
         mScrollview.fullScroll(ScrollView.FOCUS_UP);
     }
-
 }

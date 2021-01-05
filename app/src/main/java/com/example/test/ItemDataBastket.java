@@ -9,8 +9,8 @@ public class ItemDataBastket {
     public String strCount; // 주문수량(String)
     public int intCost; // 가격
     public String strCost; // 가격(String)
-    public View.OnClickListener onClickListener1;
-    public View.OnClickListener onClickListener2;
+    public View.OnClickListener onClickListener1; // 삭제 버튼
+    public View.OnClickListener onClickListener2; // 수량 버튼
     public View.OnClickListener onClickListener3;
 
     public int getIntCount() {

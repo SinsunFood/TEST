@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
     public void toBasket(View view){
         Intent intent = new Intent(getApplicationContext(), Basket.class);
         startActivity(intent);
+        mScrollview.fullScroll(ScrollView.FOCUS_UP);
+
     }
 
 }

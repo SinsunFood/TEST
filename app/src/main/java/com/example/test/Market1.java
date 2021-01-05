@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ScrollView;
 
 
 import com.google.android.material.tabs.TabLayout;
@@ -22,6 +23,8 @@ public class Market1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market1);
+        ScrollView mScrollview;
+        mScrollview = findViewById(R.id.scrollView);
 
         //정원이꺼 map뷰
         ViewPager mapVp = findViewById(R.id.mapview);
